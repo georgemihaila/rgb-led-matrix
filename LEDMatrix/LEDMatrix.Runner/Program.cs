@@ -6,14 +6,22 @@ using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 
 using System.Text;
+using System;
+using Constants = LEDMatrix.Core.Constants;
 
 var factory = new ConnectionFactory { HostName = "localhost" };
 var connection = factory.CreateConnection();
 using var channel = connection.CreateModel();
+channel.QueueBind(Constants.DEFAULT_QUEUE_NAME, Constants.DEFAULT_EXCHANGE_NAME, string.Empty);
 
-channel.QueueDeclare(LEDMatrix.Core.Constants.DEFAULT_EXCHANGE_NAME);
+//channel.QueueDeclare(LEDMatrix.Core.Constants.DEFAULT_EXCHANGE_NAME);
 
-IRGBLEDMatrix matrix = new RGBLedMatrix(new RGBLedMatrixOptions()
+IRGBLEDMatrix matrix =
+#if DEBUG
+    new MockRGBLEDMatrix();
+Console.WriteLine("Initialized Mock RGB LED matrix");
+#else
+new RGBLedMatrix(new RGBLedMatrixOptions()
 {
     Brightness = 10,
     GpioSlowdown = 2,
@@ -21,7 +29,8 @@ IRGBLEDMatrix matrix = new RGBLedMatrix(new RGBLedMatrixOptions()
     Cols = 64,
     ChainLength = 4
 });
-
+Console.WriteLine("Initialized RGB LED matrix");
+#endif
 var canvas = matrix.CreateOffscreenCanvas();
 
 var consumer = new EventingBasicConsumer(channel);
@@ -32,7 +41,8 @@ consumer.Received += (model, eventArgs) =>
 
     Console.WriteLine(message);
 };
-
+Console.WriteLine("Listening for queue messages...");
+channel.BasicConsume(Constants.DEFAULT_QUEUE_NAME, true, consumer);
 while (true)
 {
     canvas = matrix.SwapOnVsync(canvas);
