@@ -46,6 +46,7 @@ consumer.Received += (model, eventArgs) =>
     var animation = builder.AddPixelTransition(new Pixel(0, 0, Color.Red)).Build();
     animations.Add(animation);
     animation.Play();
+    Console.WriteLine($"Playing {eventArgs.Body}");
 };
 Console.WriteLine("Listening for queue messages...");
 channel.BasicConsume(Constants.DEFAULT_QUEUE_NAME, true, consumer);
