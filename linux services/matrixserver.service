@@ -1,0 +1,15 @@
+[Unit]
+Description=RGB LED Matrix server service
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=root
+WorkingDirectory=/root/rgb-led-matrix/LEDMatrix/LEDMatrix
+ExecStart=/usr/local/bin/dotnet run --configuration=Release --urls=http://*:5050
+
+[Install]
+WantedBy=multi-user.target
