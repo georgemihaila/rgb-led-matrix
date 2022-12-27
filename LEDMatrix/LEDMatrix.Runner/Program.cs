@@ -53,11 +53,11 @@ channel.BasicConsume(Constants.DEFAULT_QUEUE_NAME, true, consumer);
 while (true)
 {
     canvas = matrix.SwapOnVsync(canvas);
-    foreach(var notCompleted in animations.Where(x => !x.Completed))
+    foreach(var notCompleted in animations.Where(x => !x.Completed).ToList())
     {
         notCompleted.Tick();
     }
-    foreach (var completed in animations.Where(x => x.Completed))
+    foreach (var completed in animations.Where(x => x.Completed).ToList())
     {
         animations.Remove(completed);
     }
