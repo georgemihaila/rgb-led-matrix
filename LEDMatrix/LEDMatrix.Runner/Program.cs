@@ -34,7 +34,7 @@ new RGBLedMatrix(new RGBLedMatrixOptions()
 Console.WriteLine("Initialized RGB LED matrix");
 #endif
 var canvas = matrix.CreateOffscreenCanvas();
-
+List<IAnimation> animations = new();
 var consumer = new EventingBasicConsumer(channel);
 consumer.Received += (model, eventArgs) =>
 {
@@ -44,6 +44,7 @@ consumer.Received += (model, eventArgs) =>
 
     var builder = new AnimationBuilder(canvas, 1000);
     var animation = builder.AddPixelTransition(new Pixel(0, 0, Color.Red)).Build();
+    animations.Add(animation);
     animation.Play();
 };
 Console.WriteLine("Listening for queue messages...");
@@ -51,4 +52,12 @@ channel.BasicConsume(Constants.DEFAULT_QUEUE_NAME, true, consumer);
 while (true)
 {
     canvas = matrix.SwapOnVsync(canvas);
+    foreach(var notCompleted in animations.Where(x => !x.Completed))
+    {
+        notCompleted.Tick();
+    }
+    foreach (var completed in animations.Where(x => x.Completed))
+    {
+        animations.Remove(completed);
+    }
 }
