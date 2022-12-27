@@ -11,7 +11,7 @@ namespace LEDMatrix.Server.Infra
     {
         public void SendActionToQueue<T>(T message) where T : IDrawAction
         {
-            var factory = new ConnectionFactory { HostName = "localhost" };
+            var factory = new ConnectionFactory { HostName = "10.10.0.241", UserName = "ledpanel", Password = "ledpanel" };
             var connection = factory.CreateConnection();
             using (var channel = connection.CreateModel())
             {

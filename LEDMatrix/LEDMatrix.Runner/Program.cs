@@ -9,7 +9,7 @@ using System.Text;
 using System;
 using Constants = LEDMatrix.Core.Constants;
 
-var factory = new ConnectionFactory { HostName = "localhost" };
+var factory = new ConnectionFactory { HostName = "10.10.0.241", UserName = "ledpanel", Password = "ledpanel" };
 var connection = factory.CreateConnection();
 using var channel = connection.CreateModel();
 channel.QueueBind(Constants.DEFAULT_QUEUE_NAME, Constants.DEFAULT_EXCHANGE_NAME, string.Empty);
