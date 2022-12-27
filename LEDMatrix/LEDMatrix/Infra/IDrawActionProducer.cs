@@ -1,4 +1,6 @@
-﻿namespace LEDMatrix.Server.Infra
+﻿using LEDMatrix.Core.Drawing.Actions;
+
+namespace LEDMatrix.Server.Infra
 {
     public interface IDrawActionProducer
     {

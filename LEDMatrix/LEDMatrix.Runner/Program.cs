@@ -8,6 +8,8 @@ using RabbitMQ.Client.Events;
 using System.Text;
 using System;
 using Constants = LEDMatrix.Core.Constants;
+using LEDMatrix.Core.Drawing.Animations;
+using LEDMatrix.Core.Drawing.Actions.Pixels;
 
 var factory = new ConnectionFactory { HostName = "10.10.0.241", UserName = "ledpanel", Password = "ledpanel" };
 var connection = factory.CreateConnection();
@@ -38,7 +40,7 @@ consumer.Received += (model, eventArgs) =>
 {
     var body = eventArgs.Body.ToArray();
     var message = Encoding.UTF8.GetString(body);
-
+    new SmoothTransitionAnimation(new SetPixelAction())
     Console.WriteLine(message);
 };
 Console.WriteLine("Listening for queue messages...");
