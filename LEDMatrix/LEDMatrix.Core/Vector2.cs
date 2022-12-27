@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace LEDMatrix.Core
 {
     public class Vector2<T> 
+        where T: struct
     {
         public Vector2(T x, T y)
         {
@@ -16,5 +17,6 @@ namespace LEDMatrix.Core
 
         public T X { get; set; }
         public T Y { get; set; }
+        public static Vector2<T> Zero => new(default, default);
     }
 }

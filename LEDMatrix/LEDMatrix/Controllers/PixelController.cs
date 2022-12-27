@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace LEDMatrix.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     public class PixelController : ControllerBase
     {
         private readonly IRGBLEDCanvas _canvas;
