@@ -8,6 +8,7 @@ namespace LEDMatrix.Core
 {
     public class Color
     {
+        public Color() { }
         public Color(double r, double g, double b) : this((byte)r, (byte)b, (byte)b) { }
         public Color(byte r, byte g, byte b)
         {
