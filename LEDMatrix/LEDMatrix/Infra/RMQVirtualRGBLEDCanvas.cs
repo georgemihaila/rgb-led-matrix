@@ -1,5 +1,5 @@
 ﻿using LEDMatrix.Core;
-using LEDMatrix.Core.Canvas;
+using LEDMatrix.Core.Canvas.Pixels;
 using LEDMatrix.Core.Drawing.Actions.Pixels;
 using LEDMatrix.Core.Fonts;
 
@@ -56,5 +56,12 @@ namespace LEDMatrix.Server.Infra
         {
             _drawActionProducer.SendActionToQueue(new SetPixelAction(this, new Pixel(x, y, color)));
         }
+
+        public void AddColorToPixel(int x, int y, Color color)
+        {
+            _drawActionProducer.SendActionToQueue(new AddColorToPixelAction(this, x, y, color));
+        }
+
+        public void AddColorToPixel(Vector2<int> position, Color color) => AddColorToPixel(position.X, position.Y, color);
     }
 }

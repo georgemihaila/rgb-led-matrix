@@ -1,4 +1,5 @@
-﻿using LEDMatrix.Core.Fonts;
+﻿using LEDMatrix.Core.Canvas.Pixels;
+using LEDMatrix.Core.Fonts;
 
 using System;
 using System.Collections.Generic;
@@ -51,6 +52,14 @@ namespace LEDMatrix.Core.Canvas
         public override void SetPixel(int x, int y, Color color)
         {
 
+        }
+
+        void IPixelModifier.AddColorToPixel(int x, int y, Color color)
+        {
+        }
+
+        void IPixelModifier.AddColorToPixel(Vector2<int> position, Color color)
+        {
         }
     }
 }

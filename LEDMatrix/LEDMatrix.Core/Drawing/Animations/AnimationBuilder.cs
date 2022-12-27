@@ -11,16 +11,17 @@ namespace LEDMatrix.Core.Drawing.Animations
     public class AnimationBuilder
     {
         private readonly IRGBLEDCanvas _canvas;
-        private readonly AggregatedAnimation _result;
+        private readonly ParallelAggregatedAnimation _result;
         public AnimationBuilder(IRGBLEDCanvas canvas, int durationMilliseconds)
         {
             _canvas = canvas;
-            _result = new AggregatedAnimation(durationMilliseconds);
+            _result = new ParallelAggregatedAnimation(durationMilliseconds);
         }
 
-        public void AddPixelTransition(Pixel value)
+        public AnimationBuilder AddPixelTransition(Pixel value)
         {
-            _result.Add(new SmoothTransitionAnimation<SetPixelAction>(new SetPixelAction(_canvas, value), _result.DurationMilliseconds));
+            _result.Add(new SmoothTransitionAnimation<SetPixelAction>(_canvas, new SetPixelAction(_canvas, value), _result.DurationMilliseconds));
+            return this;
         }
 
         public IAnimation Build() => _result;

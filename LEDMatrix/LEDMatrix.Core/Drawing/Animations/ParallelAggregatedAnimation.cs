@@ -6,16 +6,18 @@ using System.Threading.Tasks;
 
 namespace LEDMatrix.Core.Drawing.Animations
 {
-    public sealed class AggregatedAnimation : IAnimation
+    public sealed class ParallelAggregatedAnimation : IAnimation
     {
         private readonly IList<IAnimation> _animations;
         public double DurationMilliseconds { get; private set; }
-        public AggregatedAnimation(double durationMilliseconds)
+        public bool Completed { get => _animations.All(x => x.Completed); }
+
+        public ParallelAggregatedAnimation(double durationMilliseconds)
         {
             DurationMilliseconds = durationMilliseconds;
             _animations = new List<IAnimation>();
         }
-        public AggregatedAnimation(double durationMilliseconds, params IAnimation[] animations)
+        public ParallelAggregatedAnimation(double durationMilliseconds, params IAnimation[] animations)
         {
             DurationMilliseconds = durationMilliseconds;
             _animations = new List<IAnimation>(animations);
@@ -31,6 +33,14 @@ namespace LEDMatrix.Core.Drawing.Animations
             foreach(var animation in _animations)
             {
                 animation.Tick();
+            }
+        }
+
+        public void Play()
+        {
+            foreach(var animation in _animations)
+            {
+                animation.Play();
             }
         }
     }

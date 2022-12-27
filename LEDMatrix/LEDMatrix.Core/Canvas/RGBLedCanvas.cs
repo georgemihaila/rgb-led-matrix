@@ -4,11 +4,12 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using LEDMatrix.Core.Canvas.Pixels;
 using LEDMatrix.Core.Fonts;
 
 namespace LEDMatrix.Core.Canvas
 {
-    public class RGBLedCanvas : PixelSetterBase, IRGBLEDCanvas
+    public class RGBLedCanvas : PixelModifierBase, IRGBLEDCanvas
     {
         #region DLLImports
         [DllImport("librgbmatrix.so")]
@@ -44,14 +45,15 @@ namespace LEDMatrix.Core.Canvas
             led_canvas_get_size(_canvas, out width, out height);
             Width = width;
             Height = height;
+            VirtualCanvas = new VirtualCanvas(Width, Height, () => Color.FromRGB(0));
         }
-
         public int Width { get; private set; }
         public int Height { get; private set; }
         IntPtr IRGBLEDCanvas.CanvasPtr { get; set; }
-
+        private VirtualCanvas VirtualCanvas { get; set; }
         public override void SetPixel(int x, int y, Color color)
         {
+            VirtualCanvas[x, y] = color;
             led_canvas_set_pixel(_canvas, x, y, color.R, color.G, color.B);
         }
 
@@ -80,14 +82,6 @@ namespace LEDMatrix.Core.Canvas
             return font.DrawText(_canvas, x, y, color, text, spacing, vertical);
         }
 
-        public Pixel GetPixel(int x, int y)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Pixel GetPixel(Pixel pixel)
-        {
-            throw new NotImplementedException();
-        }
+        public override Pixel GetPixel(int x, int y) => new(x, y, VirtualCanvas[x, y]);
     }
 }

@@ -43,7 +43,8 @@ consumer.Received += (model, eventArgs) =>
     Console.WriteLine(message);
 
     var builder = new AnimationBuilder(canvas, 1000);
-    builder.AddPixelTransition(new Pixel(0, 0, Color.Red));
+    var animation = builder.AddPixelTransition(new Pixel(0, 0, Color.Red)).Build();
+    animation.Play();
 };
 Console.WriteLine("Listening for queue messages...");
 channel.BasicConsume(Constants.DEFAULT_QUEUE_NAME, true, consumer);

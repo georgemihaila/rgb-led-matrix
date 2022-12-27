@@ -1,4 +1,4 @@
-﻿namespace LEDMatrix.Core
+﻿namespace LEDMatrix.Core.Canvas.Pixels
 {
     public interface IPixelSetter
     {

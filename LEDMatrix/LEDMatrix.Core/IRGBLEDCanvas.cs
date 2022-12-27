@@ -1,11 +1,11 @@
-﻿using LEDMatrix.Core.Fonts;
+﻿using LEDMatrix.Core.Canvas;
+using LEDMatrix.Core.Canvas.Pixels;
+using LEDMatrix.Core.Fonts;
 
 namespace LEDMatrix.Core
 {
-    public interface IRGBLEDCanvas : IPixelGetter, IPixelSetter
+    public interface IRGBLEDCanvas : IPixelModifier, ICanvas
     {
-        public int Width { get; }
-        public int Height { get; }
         public void Fill(Color color);
         public void Clear();
         public void DrawCircle(int x0, int y0, int radius, Color color);
