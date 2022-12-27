@@ -10,6 +10,11 @@ namespace LEDMatrix.Core
 {
     public class Pixel
     {
+        public Pixel(int x, int y, Color color) : this(new Vector2<int>(x, y), color)
+        {
+
+        }
+
         public Pixel(Vector2<int> position, Color color)
         {
             Position = position;

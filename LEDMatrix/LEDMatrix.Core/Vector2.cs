@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LEDMatrix.Core
 {
-    public class Vector2<T>
+    public class Vector2<T> 
     {
         public Vector2(T x, T y)
         {

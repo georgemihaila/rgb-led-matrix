@@ -131,7 +131,7 @@ namespace LEDMatrix.Core.Matrix
 
         public IRGBLEDCanvas SwapOnVsync(IRGBLEDCanvas canvas)
         {
-            canvas._canvasPtr = led_matrix_swap_on_vsync(matrix, canvas._canvasPtr);
+            canvas.CanvasPtr = led_matrix_swap_on_vsync(matrix, canvas.CanvasPtr);
             return canvas;
         }
 

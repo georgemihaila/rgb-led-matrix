@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace LEDMatrix.Core.Canvas
 {
-    public class MockRGBLEDCanvas : IRGBLEDCanvas
+    public class MockRGBLEDCanvas : PixelSetterBase, IRGBLEDCanvas
     {
         public int Width { get; }
         public int Height { get; }
-        IntPtr IRGBLEDCanvas._canvasPtr { get; set; }
+        IntPtr IRGBLEDCanvas.CanvasPtr { get; set; }
 
         public void Clear()
         {
@@ -39,9 +39,18 @@ namespace LEDMatrix.Core.Canvas
              
         }
 
-        public void SetPixel(int x, int y, Color color)
+        public Pixel GetPixel(int x, int y)
         {
-             
+            return new Pixel(0, 0, Color.Red);
+        }
+
+        public Pixel GetPixel(Pixel pixel)
+        {
+            return new Pixel(0, 0, Color.Red);
+        }
+        public override void SetPixel(int x, int y, Color color)
+        {
+
         }
     }
 }

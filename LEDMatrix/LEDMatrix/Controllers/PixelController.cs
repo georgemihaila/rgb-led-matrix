@@ -10,17 +10,17 @@ namespace LEDMatrix.Controllers
     [Route("[controller]")]
     public class PixelController : ControllerBase
     {
-        private readonly IDrawActionProducer _drawActionProducer;
+        private readonly IRGBLEDCanvas _canvas;
 
-        public PixelController(IDrawActionProducer drawActionProducer)
+        public PixelController(IRGBLEDCanvas canvas)
         {
-            _drawActionProducer = drawActionProducer;
+            _canvas = canvas;
         }
 
         [HttpPost]
         public IActionResult SetPixel([FromBody] Pixel pixel)
         {
-            _drawActionProducer.SendActionToQueue(new SetPixelAction(pixel));
+            _canvas.SetPixel(pixel);
             return Ok();
         }
     }

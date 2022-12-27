@@ -1,4 +1,4 @@
-﻿using LEDMatrix.Core.Drawing.Actions;
+﻿using LEDMatrix.Core.Drawing;
 
 namespace LEDMatrix.Server.Infra
 {

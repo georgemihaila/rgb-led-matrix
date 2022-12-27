@@ -40,8 +40,10 @@ consumer.Received += (model, eventArgs) =>
 {
     var body = eventArgs.Body.ToArray();
     var message = Encoding.UTF8.GetString(body);
-    new SmoothTransitionAnimation(new SetPixelAction())
     Console.WriteLine(message);
+
+    var builder = new AnimationBuilder(canvas, 1000);
+    builder.AddPixelTransition(new Pixel(0, 0, Color.Red));
 };
 Console.WriteLine("Listening for queue messages...");
 channel.BasicConsume(Constants.DEFAULT_QUEUE_NAME, true, consumer);

@@ -8,7 +8,7 @@ using LEDMatrix.Core.Fonts;
 
 namespace LEDMatrix.Core.Canvas
 {
-    public class RGBLedCanvas : IRGBLEDCanvas
+    public class RGBLedCanvas : PixelSetterBase, IRGBLEDCanvas
     {
         #region DLLImports
         [DllImport("librgbmatrix.so")]
@@ -48,9 +48,9 @@ namespace LEDMatrix.Core.Canvas
 
         public int Width { get; private set; }
         public int Height { get; private set; }
-        IntPtr IRGBLEDCanvas._canvasPtr { get; set; }
+        IntPtr IRGBLEDCanvas.CanvasPtr { get; set; }
 
-        public void SetPixel(int x, int y, Color color)
+        public override void SetPixel(int x, int y, Color color)
         {
             led_canvas_set_pixel(_canvas, x, y, color.R, color.G, color.B);
         }
@@ -78,6 +78,16 @@ namespace LEDMatrix.Core.Canvas
         public int DrawText(RGBLedFont font, int x, int y, Color color, string text, int spacing = 0, bool vertical = false)
         {
             return font.DrawText(_canvas, x, y, color, text, spacing, vertical);
+        }
+
+        public Pixel GetPixel(int x, int y)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Pixel GetPixel(Pixel pixel)
+        {
+            throw new NotImplementedException();
         }
     }
 }

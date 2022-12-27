@@ -2,17 +2,10 @@
 
 namespace LEDMatrix.Core.Drawing.Actions.Pixels
 {
-    public class SetPixelAction : ITransition1, IDrawAction
+    public class SetPixelAction : PixelValueGetter
     {
-        public Pixel From { get; private set; }
-        public Pixel To { get; private set; }
-        public IRGBLEDCanvas Canvas { get; }
-
-        public SetPixelAction(IRGBLEDCanvas canvas, Pixel from, Pixel to)
+        public SetPixelAction(IRGBLEDCanvas canvas, Pixel to) : base(canvas, to)
         {
-            From = from;
-            To = to;
-            Canvas = canvas;
         }
     }
 }

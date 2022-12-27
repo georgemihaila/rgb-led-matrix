@@ -23,5 +23,10 @@ namespace LEDMatrix.Core
         public byte R;
         public byte G;
         public byte B;
+
+        public static Color FromRGB(byte r, byte g, byte b) => new(r, g, b);
+        public static Color Red => FromRGB(255, 0, 0);
+        public static Color Green => FromRGB(0, 255, 0);
+        public static Color Blue => FromRGB(0, 0, 255);
     }
 }
