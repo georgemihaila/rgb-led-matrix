@@ -19,6 +19,7 @@ namespace LEDMatrix.Core.Drawing.Animations
         {
             _action = action;
             DurationMilliseconds = durationMilliseconds;
+            _transitionPerMillisecond = new Vector3<double>((_action.To.Color.R - From.Color.R) / DurationMilliseconds,(_action.To.Color.G - From.Color.G) / DurationMilliseconds,(_action.To.Color.B - From.Color.B) / DurationMilliseconds);
         }
 
         public void Tick()
