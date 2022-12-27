@@ -5,11 +5,11 @@ using LEDMatrix.Core.Fonts;
 
 namespace LEDMatrix.Server.Infra
 {
-    public class VirtualRGBLEDCanvas : PixelSetterBase, IRGBLEDCanvas
+    public class RMQVirtualRGBLEDCanvas : PixelSetterBase, IRGBLEDCanvas
     {
         private readonly IDrawActionProducer _drawActionProducer;
 
-        public VirtualRGBLEDCanvas(IDrawActionProducer drawActionProducer)
+        public RMQVirtualRGBLEDCanvas(IDrawActionProducer drawActionProducer)
         {
             _drawActionProducer = drawActionProducer;
         }
