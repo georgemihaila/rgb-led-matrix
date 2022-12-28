@@ -49,11 +49,12 @@ consumer.Received += (model, eventArgs) =>
     animations.Add(builder.AddPixelTransition(new Pixel(0, 0, Color.Red), 1000).Build());
     animations.Add(builder.AddPixelTransition(new Pixel(31, 31, Color.Red), 5000).Build());
     animations.Play();
+    canvas.Clear();
 };
 Console.WriteLine("Listening for queue messages...");
 channel.BasicConsume(Constants.DEFAULT_QUEUE_NAME, true, consumer);
 while (true)
 {
-    //canvas = matrix.SwapOnVsync(canvas);
+    canvas = matrix.SwapOnVsync(canvas);
     animations.Update();
 }
