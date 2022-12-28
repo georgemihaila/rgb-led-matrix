@@ -1,5 +1,5 @@
 using LEDMatrix.Core;
-using LEDMatrix.Core.Drawing.Actions.Pixels;
+using LEDMatrix.Core.Canvas.Drawing.Actions.Pixels;
 using LEDMatrix.Server.Infra;
 
 using Microsoft.AspNetCore.Mvc;

@@ -1,12 +1,4 @@
-﻿using LEDMatrix.Core.Canvas;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LEDMatrix.Core
+﻿namespace LEDMatrix.Core
 {
     public class Pixel
     {

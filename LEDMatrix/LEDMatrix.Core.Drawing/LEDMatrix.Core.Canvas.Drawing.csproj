@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\LEDMatrix.Core.Canvas\LEDMatrix.Core.Canvas.csproj" />
+    <ProjectReference Include="..\LEDMatrix.Core\LEDMatrix.Core.csproj" />
+  </ItemGroup>
+
 </Project>

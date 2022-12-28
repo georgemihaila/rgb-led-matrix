@@ -9,6 +9,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LEDMatrix.Core", "LEDMatrix
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LEDMatrix.Runner", "LEDMatrix.Runner\LEDMatrix.Runner.csproj", "{4553FDCE-C054-4511-88BB-E68BD5DB3C22}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LEDMatrix.Core.Canvas", "LEDMatrix.Core.Canvas\LEDMatrix.Core.Canvas.csproj", "{BF9F02D1-5CBE-4EC6-9B19-11C11F26BB99}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework", "Framework", "{5942ADF3-04CE-4E2C-8282-17D24698789C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LEDMatrix.Core.Canvas.Drawing", "LEDMatrix.Core.Drawing\LEDMatrix.Core.Canvas.Drawing.csproj", "{F8F8B401-B640-4BE5-ACFB-E4D131CBE0D4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,9 +33,22 @@ Global
 		{4553FDCE-C054-4511-88BB-E68BD5DB3C22}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4553FDCE-C054-4511-88BB-E68BD5DB3C22}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4553FDCE-C054-4511-88BB-E68BD5DB3C22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF9F02D1-5CBE-4EC6-9B19-11C11F26BB99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF9F02D1-5CBE-4EC6-9B19-11C11F26BB99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF9F02D1-5CBE-4EC6-9B19-11C11F26BB99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF9F02D1-5CBE-4EC6-9B19-11C11F26BB99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8F8B401-B640-4BE5-ACFB-E4D131CBE0D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8F8B401-B640-4BE5-ACFB-E4D131CBE0D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8F8B401-B640-4BE5-ACFB-E4D131CBE0D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8F8B401-B640-4BE5-ACFB-E4D131CBE0D4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{04DFD1A5-5EB7-4D56-86C6-09E106F1E09F} = {5942ADF3-04CE-4E2C-8282-17D24698789C}
+		{BF9F02D1-5CBE-4EC6-9B19-11C11F26BB99} = {5942ADF3-04CE-4E2C-8282-17D24698789C}
+		{F8F8B401-B640-4BE5-ACFB-E4D131CBE0D4} = {5942ADF3-04CE-4E2C-8282-17D24698789C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3595AC22-2408-4F29-8065-AA4B21E6334E}

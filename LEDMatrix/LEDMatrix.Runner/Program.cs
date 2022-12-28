@@ -1,6 +1,6 @@
 ﻿using LEDMatrix.Core;
 using LEDMatrix.Core.Matrix;
-using LEDMatrix.Core.Options;
+using LEDMatrix.Core.Canvas.Drawing.Options;
 
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
@@ -8,8 +8,8 @@ using RabbitMQ.Client.Events;
 using System.Text;
 using System;
 using Constants = LEDMatrix.Core.Constants;
-using LEDMatrix.Core.Drawing.Animations;
-using LEDMatrix.Core.Drawing.Actions.Pixels;
+using LEDMatrix.Core.Canvas.Drawing.Animations;
+using LEDMatrix.Core.Canvas.Drawing.Actions.Pixels;
 
 var factory = new ConnectionFactory { HostName = "10.10.0.241", UserName = "ledpanel", Password = "ledpanel" };
 var connection = factory.CreateConnection();

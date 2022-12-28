@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Runtime.InteropServices;
 
 namespace LEDMatrix.Core.Fonts
 {
@@ -27,7 +22,7 @@ namespace LEDMatrix.Core.Fonts
         }
         internal IntPtr _font;
 
-        internal int DrawText(IntPtr canvas, int x, int y, Color color, string text, int spacing = 0, bool vertical = false)
+        public int DrawText(IntPtr canvas, int x, int y, Color color, string text, int spacing = 0, bool vertical = false)
         {
             if (!vertical)
                 return draw_text(canvas, _font, x, y, color.R, color.G, color.B, text, spacing);
