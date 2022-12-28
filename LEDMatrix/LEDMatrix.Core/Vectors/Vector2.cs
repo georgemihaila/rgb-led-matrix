@@ -18,5 +18,6 @@ namespace LEDMatrix.Core.Vectors
         public T X { get; set; }
         public T Y { get; set; }
         public static Vector2<T> Zero => new(default, default);
+        public override string ToString() => $"X: {X} Y: {Y}";
     }
 }

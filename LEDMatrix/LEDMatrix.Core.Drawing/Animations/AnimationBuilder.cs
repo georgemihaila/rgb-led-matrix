@@ -1,5 +1,7 @@
 ﻿using LEDMatrix.Core.Canvas.Drawing.Actions.Pixels;
 using LEDMatrix.Core.Canvas.Drawing.Animations.Collections;
+using LEDMatrix.Core.Canvas.Drawing.Animations.Pixels;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +22,7 @@ namespace LEDMatrix.Core.Canvas.Drawing.Animations
 
         public AnimationBuilder AddPixelTransition(Pixel value, double durationMilliseconds)
         {
-            _result.Add(new SmoothTransitionAnimation<SetPixelAction>(_canvas, new SetPixelAction(_canvas, value), durationMilliseconds));
+            _result.Add(new LinearTransitionAnimation<SetPixelAction>(_canvas, new SetPixelAction(_canvas, value), durationMilliseconds));
             return this;
         }
 

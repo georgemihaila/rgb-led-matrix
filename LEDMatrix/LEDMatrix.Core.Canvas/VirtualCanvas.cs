@@ -1,4 +1,6 @@
-﻿using System;
+﻿using LEDMatrix.Core.Vectors;
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http.Headers;
@@ -16,6 +18,17 @@ namespace LEDMatrix.Core.Canvas
             Width = width;
             Height = height;
             _defaultColorFunc = defaultColor;
+        }
+        public Color this[Vector2<int> position]
+        {
+            get
+            {
+                return this[position.X, position.Y];
+            }
+            set
+            {
+                this[position.X, position.Y] = value;
+            }
         }
         public Color this[int x, int y]
         {

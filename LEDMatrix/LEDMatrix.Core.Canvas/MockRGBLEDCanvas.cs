@@ -4,12 +4,12 @@ using LEDMatrix.Core.Vectors;
 
 namespace LEDMatrix.Core.Canvas
 {
-    public class MockRGBLEDCanvas : PixelSetterBase, IRGBLEDCanvas
+    public class MockRGBLEDCanvas : PixelModifierBase, IRGBLEDCanvas
     {
         public int Width { get; }
         public int Height { get; }
         IntPtr IRGBLEDCanvas.CanvasPtr { get; set; }
-
+        VirtualCanvas VirtualCanvas { get; set; } = new(64, 64, () => Color.Black);
         public void Clear()
         {
              
@@ -35,26 +35,12 @@ namespace LEDMatrix.Core.Canvas
              
         }
 
-        public Pixel GetPixel(int x, int y)
-        {
-            return new Pixel(0, 0, Color.Red);
-        }
+        public override Pixel GetPixel(int x, int y) => new(x, y, VirtualCanvas[x, y]);
 
-        public Pixel GetPixel(Pixel pixel)
-        {
-            return new Pixel(0, 0, Color.Red);
-        }
         public override void SetPixel(int x, int y, Color color)
         {
-
-        }
-
-        void IPixelModifier.AddColorToPixel(int x, int y, Color color)
-        {
-        }
-
-        void IPixelModifier.AddColorToPixel(Vector2<int> position, Color color)
-        {
+            Console.WriteLine($"Setting {(x, y)} to {color}");
+            VirtualCanvas[x, y] += color;
         }
     }
 }
