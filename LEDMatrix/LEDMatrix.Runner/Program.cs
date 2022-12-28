@@ -73,7 +73,7 @@ Console.WriteLine("Initialized Mock RGB LED matrix");
                     canvas = matrix.SwapOnVsync(canvas);
                     canvas.Clear();
                     animations.Update(canvas);
-                    canvas.DrawText(new Core.Fonts.RGBLedFont("/root/rpi-rgbledmatrix-glsl/rpi-rgb-led-matrix/fonts/7x14B.bdf"), 0, 0, Color.White, $"{DateTime.Now.ToString("hh:mm:ss:f")}");
+                    canvas.DrawText(new Core.Fonts.RGBLedFont("/root/rpi-rgbledmatrix-glsl/rpi-rgb-led-matrix/fonts/7x14B.bdf"), 0, 8, Color.White, $"{DateTime.Now.ToString("hh:mm:ss:f")}");
                 }
 
             }
