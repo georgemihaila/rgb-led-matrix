@@ -8,22 +8,22 @@ using System.Threading.Tasks;
 
 namespace LEDMatrix.Core.Matrix
 {
-    public class MockRGBLEDMatrix : IRGBLEDMatrix
+    public class MockRGBLEDMatrix : IRGBLEDMatrix<MockRGBLEDCanvas>
     {
-        private readonly IRGBLEDCanvas _canvas = new MockRGBLEDCanvas();
+        private readonly MockRGBLEDCanvas _canvas = new MockRGBLEDCanvas();
         public byte Brightness { get; set; }
 
-        public IRGBLEDCanvas CreateOffscreenCanvas()
+        public MockRGBLEDCanvas CreateOffscreenCanvas()
         {
             return _canvas;
         }
 
-        public IRGBLEDCanvas GetCanvas()
+        public MockRGBLEDCanvas GetCanvas()
         {
             return _canvas;
         }
 
-        public IRGBLEDCanvas SwapOnVsync(IRGBLEDCanvas canvas)
+        public MockRGBLEDCanvas SwapOnVsync(MockRGBLEDCanvas canvas)
         {
             return _canvas;
         }

@@ -8,8 +8,6 @@ namespace LEDMatrix.Core.Canvas
     {
         public int Width { get; }
         public int Height { get; }
-        IntPtr IRGBLEDCanvas.CanvasPtr { get; set; }
-        VirtualCanvas VirtualCanvas { get; set; } = new(64, 64, () => Color.Black);
         public void Clear()
         {
              

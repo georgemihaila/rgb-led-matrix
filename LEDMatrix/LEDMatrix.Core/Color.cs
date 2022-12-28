@@ -26,6 +26,8 @@ namespace LEDMatrix.Core
         public static Color FromRGB(byte r, byte g, byte b) => new(r, g, b);
         public static Color FromRGB(byte uniform) => new(uniform, uniform, uniform);
         public static Color FromRGB(int uniform) => new((byte)uniform, (byte)uniform, (byte)uniform);
+        private static Random random = new();
+        public static Color Random => new(random.Next(255), random.Next(255), random.Next(255));
         public static Color Red => FromRGB(255, 0, 0);
         public static Color Green => FromRGB(0, 255, 0);
         public static Color Blue => FromRGB(0, 0, 255);

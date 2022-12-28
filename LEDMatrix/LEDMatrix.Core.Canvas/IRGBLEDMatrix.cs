@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using LEDMatrix.Core.Canvas;
 
 namespace LEDMatrix.Core
 {
-    public interface IRGBLEDMatrix
+    public interface IRGBLEDMatrix<TCanvas>
+        where TCanvas : IRGBLEDCanvas
     {
         public byte Brightness { get; set; }
-        public IRGBLEDCanvas CreateOffscreenCanvas();
-        public IRGBLEDCanvas GetCanvas();
-        public IRGBLEDCanvas SwapOnVsync(IRGBLEDCanvas canvas);
+        public TCanvas CreateOffscreenCanvas();
+        public TCanvas GetCanvas();
+        public TCanvas SwapOnVsync(TCanvas canvas);
     }
 }

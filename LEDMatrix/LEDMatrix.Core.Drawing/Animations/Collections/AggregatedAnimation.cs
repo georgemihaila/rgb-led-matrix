@@ -74,7 +74,7 @@ namespace LEDMatrix.Core.Canvas.Drawing.Animations.Collections
             }
         }
 
-        public abstract void Update();
+        public abstract void Update(IRGBLEDCanvas canvas);
 
         public void Play()
         {

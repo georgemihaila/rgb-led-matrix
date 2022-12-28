@@ -50,7 +50,6 @@ namespace LEDMatrix.Core.Canvas
         }
         public int Width { get; private set; }
         public int Height { get; private set; }
-        IntPtr IRGBLEDCanvas.CanvasPtr { get; set; }
         private VirtualCanvas VirtualCanvas { get; set; }
         public override void SetPixel(int x, int y, Color color)
         {
