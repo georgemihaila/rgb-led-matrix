@@ -10,6 +10,7 @@ namespace LEDMatrix.Core.Canvas.Drawing.Animations.Collections
     public abstract class AggregatedAnimation : IAnimation, IEnumerable<IAnimation>
     {
         protected readonly IList<IAnimation> _animations;
+        protected readonly object _animationsLockObj = new();
         private AnimationRunStatistics _completedAnimationStatistics = new();
         public abstract double DurationMilliseconds { get; }
         public bool Completed
@@ -47,7 +48,8 @@ namespace LEDMatrix.Core.Canvas.Drawing.Animations.Collections
                 };
             }
             animation.OnAnimationCompleted += Animation_OnAnimationCompleted;
-            _animations.Add(animation);
+            lock(_animationsLockObj)
+                _animations.Add(animation);
         }
 
         private void Animation_OnAnimationCompleted(object? sender, AnimationRunStatistics e)
@@ -63,9 +65,12 @@ namespace LEDMatrix.Core.Canvas.Drawing.Animations.Collections
 
         public void Remove(IAnimation animation)
         {
-            if (_animations.Contains(animation))
+            lock (_animationsLockObj)
             {
-                _animations.Add(animation);
+                if (_animations.Contains(animation))
+                {
+                    _animations.Add(animation);
+                }
             }
         }
 
@@ -73,7 +78,10 @@ namespace LEDMatrix.Core.Canvas.Drawing.Animations.Collections
 
         public void Play()
         {
-            foreach (var animation in _animations)
+            IEnumerable<IAnimation> copy;
+            lock (_animationsLockObj)
+                copy = _animations.ToList();
+            foreach (var animation in copy)
             {
                 Console.WriteLine($"Playing {animation}...");
                 animation.Play();
@@ -82,12 +90,14 @@ namespace LEDMatrix.Core.Canvas.Drawing.Animations.Collections
 
         public IEnumerator<IAnimation> GetEnumerator()
         {
-            return _animations.GetEnumerator();
+            lock (_animationsLockObj)
+                return _animations.GetEnumerator();
         }
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            return ((IEnumerable)_animations).GetEnumerator();
+            lock (_animationsLockObj)
+                return ((IEnumerable)_animations).GetEnumerator();
         }
     }
 }

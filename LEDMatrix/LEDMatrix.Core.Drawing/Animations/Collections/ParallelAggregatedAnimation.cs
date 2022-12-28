@@ -30,7 +30,10 @@ namespace LEDMatrix.Core.Canvas.Drawing.Animations.Collections
 
         public override void Update()
         {
-            foreach (var animation in _animations.ToList())
+            IEnumerable<IAnimation> copy;
+            lock (_animationsLockObj)
+                copy = _animations.ToList();
+            foreach (var animation in copy)
             {
                 animation.Update();
             }
