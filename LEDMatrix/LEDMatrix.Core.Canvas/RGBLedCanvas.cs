@@ -46,7 +46,7 @@ namespace LEDMatrix.Core.Canvas
             led_canvas_get_size(_canvas, out width, out height);
             Width = width;
             Height = height;
-            VirtualCanvas = new VirtualCanvas(Width, Height, () => Color.FromRGB(0));
+            VirtualCanvas = new VirtualCanvas(Width, Height, () => Color.Black);
         }
         public int Width { get; private set; }
         public int Height { get; private set; }

@@ -30,11 +30,14 @@ new RGBLedMatrix(new RGBLedMatrixOptions()
     GpioSlowdown = 2,
     Rows = 64,
     Cols = 64,
-    ChainLength = 4
+    ChainLength = 4,
+    HardwareMapping = "default",
+    ScanMode = 1
 });
-Console.WriteLine("Initialized RGB LED matrix");
 #endif
 var canvas = matrix.CreateOffscreenCanvas();
+canvas.Clear();
+Console.WriteLine($"Initialized RGB LED matrix with size {canvas.Width}x{canvas.Height}");
 ParallelAggregatedAnimation animations = new(true);
 var consumer = new EventingBasicConsumer(channel);
 consumer.Received += (model, eventArgs) =>
@@ -47,6 +50,7 @@ consumer.Received += (model, eventArgs) =>
     animations.Add(builder.AddPixelTransition(new Pixel(0, 0, Color.Red), 1000).Build());
     animations.Add(builder.AddPixelTransition(new Pixel(31, 31, Color.Red), 5000).Build());
     animations.Play();
+    canvas.Clear();
 };
 Console.WriteLine("Listening for queue messages...");
 channel.BasicConsume(Constants.DEFAULT_QUEUE_NAME, true, consumer);
@@ -54,4 +58,5 @@ while (true)
 {
     canvas = matrix.SwapOnVsync(canvas);
     animations.Update();
+    canvas.SetPixel(31, 0, Color.Red);
 }
