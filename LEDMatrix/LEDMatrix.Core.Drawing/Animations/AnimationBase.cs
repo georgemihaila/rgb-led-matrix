@@ -28,7 +28,7 @@ namespace LEDMatrix.Core.Canvas.Drawing.Animations
             {
                 _animationUpdateParams.MarkUpdated();
                 OnUpdateInternal(_animationUpdateParams);
-                if (_animationUpdateParams.MillisecondsSinceLastUpdate >= DurationMilliseconds)
+                if (_animationUpdateParams.MillisecondsSinceStarted >= DurationMilliseconds)
                 {
                     Completed = true;
                     Canvas.SetPixel(To);

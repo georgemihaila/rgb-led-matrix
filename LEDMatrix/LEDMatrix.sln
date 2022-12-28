@@ -3,17 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LEDMatrix.Server", "LEDMatrix\LEDMatrix.Server.csproj", "{2709112C-EE6D-4470-AF9A-B99EC4F0BA69}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LEDMatrix.Server", "LEDMatrix\LEDMatrix.Server.csproj", "{2709112C-EE6D-4470-AF9A-B99EC4F0BA69}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LEDMatrix.Core", "LEDMatrix.Core\LEDMatrix.Core.csproj", "{04DFD1A5-5EB7-4D56-86C6-09E106F1E09F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LEDMatrix.Core", "LEDMatrix.Core\LEDMatrix.Core.csproj", "{04DFD1A5-5EB7-4D56-86C6-09E106F1E09F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LEDMatrix.Runner", "LEDMatrix.Runner\LEDMatrix.Runner.csproj", "{4553FDCE-C054-4511-88BB-E68BD5DB3C22}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LEDMatrix.Runner", "LEDMatrix.Runner\LEDMatrix.Runner.csproj", "{4553FDCE-C054-4511-88BB-E68BD5DB3C22}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LEDMatrix.Core.Canvas", "LEDMatrix.Core.Canvas\LEDMatrix.Core.Canvas.csproj", "{BF9F02D1-5CBE-4EC6-9B19-11C11F26BB99}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LEDMatrix.Core.Canvas", "LEDMatrix.Core.Canvas\LEDMatrix.Core.Canvas.csproj", "{BF9F02D1-5CBE-4EC6-9B19-11C11F26BB99}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework", "Framework", "{5942ADF3-04CE-4E2C-8282-17D24698789C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LEDMatrix.Core.Canvas.Drawing", "LEDMatrix.Core.Drawing\LEDMatrix.Core.Canvas.Drawing.csproj", "{F8F8B401-B640-4BE5-ACFB-E4D131CBE0D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LEDMatrix.Core.Canvas.Drawing", "LEDMatrix.Core.Drawing\LEDMatrix.Core.Canvas.Drawing.csproj", "{F8F8B401-B640-4BE5-ACFB-E4D131CBE0D4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

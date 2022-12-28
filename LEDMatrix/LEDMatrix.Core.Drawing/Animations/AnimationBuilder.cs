@@ -1,5 +1,5 @@
 ﻿using LEDMatrix.Core.Canvas.Drawing.Actions.Pixels;
-
+using LEDMatrix.Core.Canvas.Drawing.Animations.Collections;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,15 +12,15 @@ namespace LEDMatrix.Core.Canvas.Drawing.Animations
     {
         private readonly IRGBLEDCanvas _canvas;
         private readonly ParallelAggregatedAnimation _result;
-        public AnimationBuilder(IRGBLEDCanvas canvas, int durationMilliseconds)
+        public AnimationBuilder(IRGBLEDCanvas canvas, bool autoremoveOnCompletion = true)
         {
             _canvas = canvas;
-            _result = new ParallelAggregatedAnimation(durationMilliseconds);
+            _result = new(autoremoveOnCompletion);
         }
 
-        public AnimationBuilder AddPixelTransition(Pixel value)
+        public AnimationBuilder AddPixelTransition(Pixel value, double durationMilliseconds)
         {
-            _result.Add(new SmoothTransitionAnimation<SetPixelAction>(_canvas, new SetPixelAction(_canvas, value), _result.DurationMilliseconds));
+            _result.Add(new SmoothTransitionAnimation<SetPixelAction>(_canvas, new SetPixelAction(_canvas, value), durationMilliseconds));
             return this;
         }
 

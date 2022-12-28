@@ -7,5 +7,6 @@
         public bool Completed { get; }
         public event EventHandler<AnimationRunStatistics> OnAnimationCompleted;
         public void Play();
+        public string? ToString();
     }
 }

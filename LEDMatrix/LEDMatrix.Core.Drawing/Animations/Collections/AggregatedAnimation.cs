@@ -5,13 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LEDMatrix.Core.Canvas.Drawing.Animations
+namespace LEDMatrix.Core.Canvas.Drawing.Animations.Collections
 {
-    public sealed class ParallelAggregatedAnimation : IAnimation, IEnumerable<IAnimation>
+    public abstract class AggregatedAnimation : IAnimation, IEnumerable<IAnimation>
     {
-        private readonly IList<IAnimation> _animations;
+        protected readonly IList<IAnimation> _animations;
         private AnimationRunStatistics _completedAnimationStatistics = new();
-        public double DurationMilliseconds { get; private set; }
+        public abstract double DurationMilliseconds { get; }
         public bool Completed
         {
             get
@@ -24,15 +24,14 @@ namespace LEDMatrix.Core.Canvas.Drawing.Animations
         }
         private readonly bool _autoremoveOnCompletion;
 
-        public event EventHandler<AnimationRunStatistics> OnAnimationCompleted;
+        public event EventHandler<AnimationRunStatistics>? OnAnimationCompleted;
 
-        public ParallelAggregatedAnimation(double durationMilliseconds, bool autoremoveOnCompletion = false)
+        protected AggregatedAnimation(bool autoremoveOnCompletion = false)
         {
-            DurationMilliseconds = durationMilliseconds;
             _animations = new List<IAnimation>();
             _autoremoveOnCompletion = autoremoveOnCompletion;
         }
-        public ParallelAggregatedAnimation(double durationMilliseconds, bool autoremoveOnCompletion = false, params IAnimation[] animations) : this(durationMilliseconds, autoremoveOnCompletion)
+        protected AggregatedAnimation(bool autoremoveOnCompletion = false, params IAnimation[] animations) : this(autoremoveOnCompletion)
         {
             _animations = new List<IAnimation>(animations);
         }
@@ -41,7 +40,7 @@ namespace LEDMatrix.Core.Canvas.Drawing.Animations
         {
             if (_autoremoveOnCompletion)
             {
-                animation.OnAnimationCompleted += (object? sender, AnimationRunStatistics e) =>
+                animation.OnAnimationCompleted += (sender, e) =>
                 {
                     if (sender != null)
                         Remove((IAnimation)sender);
@@ -56,7 +55,9 @@ namespace LEDMatrix.Core.Canvas.Drawing.Animations
             _completedAnimationStatistics = _completedAnimationStatistics.Aggregate(e);
             if (Completed)
             {
-                OnAnimationCompleted(this, _completedAnimationStatistics);
+                if (sender != null)
+                    Console.WriteLine($"{(IAnimation)sender} completed");
+                OnAnimationCompleted?.Invoke(this, _completedAnimationStatistics);
             }
         }
 
@@ -68,18 +69,13 @@ namespace LEDMatrix.Core.Canvas.Drawing.Animations
             }
         }
 
-        public void Update()
-        {
-            foreach (var animation in _animations)
-            {
-                animation.Update();
-            }
-        }
+        public abstract void Update();
 
         public void Play()
         {
             foreach (var animation in _animations)
             {
+                Console.WriteLine($"Playing {animation}...");
                 animation.Play();
             }
         }

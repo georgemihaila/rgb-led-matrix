@@ -10,6 +10,7 @@ using System;
 using Constants = LEDMatrix.Core.Constants;
 using LEDMatrix.Core.Canvas.Drawing.Animations;
 using LEDMatrix.Core.Canvas.Drawing.Actions.Pixels;
+using LEDMatrix.Core.Canvas.Drawing.Animations.Collections;
 
 var factory = new ConnectionFactory { HostName = "10.10.0.241", UserName = "ledpanel", Password = "ledpanel" };
 var connection = factory.CreateConnection();
@@ -34,7 +35,7 @@ new RGBLedMatrix(new RGBLedMatrixOptions()
 Console.WriteLine("Initialized RGB LED matrix");
 #endif
 var canvas = matrix.CreateOffscreenCanvas();
-List<IAnimation> animations = new();
+ParallelAggregatedAnimation animations = new(true);
 var consumer = new EventingBasicConsumer(channel);
 consumer.Received += (model, eventArgs) =>
 {
@@ -42,23 +43,14 @@ consumer.Received += (model, eventArgs) =>
     var message = Encoding.UTF8.GetString(body);
     Console.WriteLine(message);
 
-    var builder = new AnimationBuilder(canvas, 1000);
-    var animation = builder.AddPixelTransition(new Pixel(0, 0, Color.Red)).Build();
-    animations.Add(animation);
-    animation.Play();
-    Console.WriteLine($"Playing {eventArgs.Body}");
+    var builder = new AnimationBuilder(canvas);
+    animations.Add(builder.AddPixelTransition(new Pixel(0, 0, Color.Red), 1000).Build());
+    animations.Play();
 };
 Console.WriteLine("Listening for queue messages...");
 channel.BasicConsume(Constants.DEFAULT_QUEUE_NAME, true, consumer);
 while (true)
 {
     canvas = matrix.SwapOnVsync(canvas);
-    foreach(var notCompleted in animations.Where(x => !x.Completed).ToList())
-    {
-        notCompleted.Update();
-    }
-    foreach (var completed in animations.Where(x => x.Completed).ToList())
-    {
-        animations.Remove(completed);
-    }
+    animations.Update();
 }

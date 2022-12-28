@@ -26,5 +26,6 @@ namespace LEDMatrix.Core.Canvas.Drawing.Animations
         public DateTime LastTickTimestamp { get; private set; }
         public DateTime StartedAt { get; private set; }
         public double MillisecondsSinceLastUpdate => (DateTime.Now - LastTickTimestamp).TotalMilliseconds;
+        public double MillisecondsSinceStarted => (DateTime.Now - StartedAt).TotalMilliseconds;
     }
 }

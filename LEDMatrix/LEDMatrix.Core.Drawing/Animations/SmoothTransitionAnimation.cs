@@ -11,7 +11,7 @@ namespace LEDMatrix.Core.Canvas.Drawing.Animations
     public class SmoothTransitionAnimation<TAction> : AnimationBase<TAction>
         where TAction : class, IDrawAction
     {
-        private DoubleVector3 _transitionPerMillisecond = (DoubleVector3)Vector3<double>.Zero;
+        private DoubleVector3 _transitionPerMillisecond = DoubleVector3.Zero;
         public SmoothTransitionAnimation(IRGBLEDCanvas canvas, TAction action, double durationMilliseconds) : base(canvas, action, durationMilliseconds)
         {
             _transitionPerMillisecond = (action.To.Color - From.Color) / DurationMilliseconds;
@@ -21,5 +21,7 @@ namespace LEDMatrix.Core.Canvas.Drawing.Animations
         {
             Canvas.AddColorToPixel(From.Position, (_transitionPerMillisecond * updateParams.MillisecondsSinceLastUpdate).ToColor());
         }
+
+        public override string ToString() => GetType().Name;
     }
 }
