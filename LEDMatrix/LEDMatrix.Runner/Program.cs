@@ -19,7 +19,7 @@ channel.QueueBind(Constants.DEFAULT_QUEUE_NAME, Constants.DEFAULT_EXCHANGE_NAME,
 
 //channel.QueueDeclare(LEDMatrix.Core.Constants.DEFAULT_EXCHANGE_NAME);
 
-IRGBLEDMatrix matrix =
+var matrix =
 #if DEBUG
     new MockRGBLEDMatrix();
 Console.WriteLine("Initialized Mock RGB LED matrix");
@@ -31,8 +31,10 @@ new RGBLedMatrix(new RGBLedMatrixOptions()
     Rows = 64,
     Cols = 64,
     ChainLength = 4,
-    HardwareMapping = "default",
-    ScanMode = 1
+    HardwareMapping = "regular",
+    ScanMode = 1,
+    PixelMapperConfig = "U-mapper",
+    ShowRefreshRate = true
 });
 #endif
 var canvas = matrix.CreateOffscreenCanvas();
