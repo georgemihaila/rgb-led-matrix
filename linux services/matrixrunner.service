@@ -9,7 +9,7 @@ Restart=always
 RestartSec=1
 User=pi
 WorkingDirectory=/root/rgb-led-matrix/LEDMatrix/LEDMatrix.Runner
-ExecStart=/usr/local/bin/dotnet run --configuration=Release
+ExecStart=/usr/local/bin/dotnet run --project=LEDMatrix.Runner.csproj  --configuration=Release
 
 [Install]
 WantedBy=multi-user.target
