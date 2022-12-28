@@ -34,9 +34,10 @@ new RGBLedMatrix(new RGBLedMatrixOptions()
     HardwareMapping = "default",
     ScanMode = 1
 });
-Console.WriteLine("Initialized RGB LED matrix");
 #endif
 var canvas = matrix.CreateOffscreenCanvas();
+canvas.Clear();
+Console.WriteLine($"Initialized RGB LED matrix with size {canvas.Width}x{canvas.Height}");
 ParallelAggregatedAnimation animations = new(true);
 var consumer = new EventingBasicConsumer(channel);
 consumer.Received += (model, eventArgs) =>
