@@ -18,7 +18,6 @@ namespace LEDMatrix.Server.Infra
 
         public int Width { get; private set; } = 64;
         public int Height { get; private set; } = 64;
-        IntPtr IRGBLEDCanvas.CanvasPtr { get; set; }
         public void Clear()
         {
            

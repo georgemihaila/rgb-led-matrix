@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace LEDMatrix.Core.Matrix
 {
-    public class RGBLedMatrix : IRGBLEDMatrix, IDisposable
+    public class RGBLedMatrix : IRGBLEDMatrix<RGBLedCanvas>, IDisposable
     {
         #region DLLImports
         [DllImport("librgbmatrix.so")]
@@ -117,21 +117,21 @@ namespace LEDMatrix.Core.Matrix
 
         private IntPtr matrix;
 
-        public IRGBLEDCanvas CreateOffscreenCanvas()
+        public RGBLedCanvas CreateOffscreenCanvas()
         {
             var canvas = led_matrix_create_offscreen_canvas(matrix);
             return new RGBLedCanvas(canvas);
         }
 
-        public IRGBLEDCanvas GetCanvas()
+        public RGBLedCanvas GetCanvas()
         {
             var canvas = led_matrix_get_canvas(matrix);
             return new RGBLedCanvas(canvas);
         }
 
-        public IRGBLEDCanvas SwapOnVsync(IRGBLEDCanvas canvas)
+        public RGBLedCanvas SwapOnVsync(RGBLedCanvas canvas)
         {
-            canvas.CanvasPtr = led_matrix_swap_on_vsync(matrix, canvas.CanvasPtr);
+            canvas._canvas = led_matrix_swap_on_vsync(matrix, canvas._canvas);
             return canvas;
         }
 
