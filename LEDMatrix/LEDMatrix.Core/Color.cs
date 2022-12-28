@@ -1,5 +1,8 @@
-﻿using System;
+﻿using LEDMatrix.Core.Vectors;
+
+using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,5 +31,11 @@ namespace LEDMatrix.Core
         public static Color Blue => FromRGB(0, 0, 255);
         public static Color White => FromRGB(255);
         public static Color Black => FromRGB(0);
+        public static Color operator *(Color c, DoubleVector3 vector3) => new(c.R * vector3.X, c.G + vector3.Y, c.B * vector3.Z);
+        public static Color operator *(Color c, double scalar) => new(c.R * scalar, c.G + scalar, c.B * scalar);
+        public static Color operator /(Color c, double scalar) => new(c.R / scalar, c.G / scalar, c.B / scalar);
+        public static Color operator -(Color c, DoubleVector3 vector3) => new(c.R - vector3.X, c.G - vector3.Y, c.B - vector3.Z);
+        public static Color operator -(Color a, Color b) => new(a.R - b.R, a.G - b.G, a.B - b.B);
+        public static Color operator +(Color c, DoubleVector3 vector3) => new(c.R + vector3.X, c.G + vector3.Y, c.B + vector3.Z);
     }
 }

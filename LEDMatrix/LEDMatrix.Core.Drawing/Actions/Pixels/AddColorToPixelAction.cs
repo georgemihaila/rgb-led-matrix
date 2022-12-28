@@ -1,4 +1,5 @@
 ﻿using LEDMatrix.Core.Canvas.Drawing.Transitions;
+using LEDMatrix.Core.Vectors;
 
 namespace LEDMatrix.Core.Canvas.Drawing.Drawing.Actions.Pixels
 {

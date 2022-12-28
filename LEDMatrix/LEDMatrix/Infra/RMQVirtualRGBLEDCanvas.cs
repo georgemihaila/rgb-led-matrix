@@ -3,6 +3,7 @@ using LEDMatrix.Core.Pixels;
 using LEDMatrix.Core.Canvas.Drawing.Actions.Pixels;
 using LEDMatrix.Core.Fonts;
 using LEDMatrix.Core.Canvas.Drawing.Drawing.Actions.Pixels;
+using LEDMatrix.Core.Vectors;
 
 namespace LEDMatrix.Server.Infra
 {

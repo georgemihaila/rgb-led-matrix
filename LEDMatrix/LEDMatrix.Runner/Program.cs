@@ -55,7 +55,7 @@ while (true)
     canvas = matrix.SwapOnVsync(canvas);
     foreach(var notCompleted in animations.Where(x => !x.Completed).ToList())
     {
-        notCompleted.Tick();
+        notCompleted.Update();
     }
     foreach (var completed in animations.Where(x => x.Completed).ToList())
     {

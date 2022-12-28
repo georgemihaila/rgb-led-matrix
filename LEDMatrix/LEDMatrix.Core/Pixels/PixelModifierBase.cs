@@ -1,4 +1,6 @@
-﻿namespace LEDMatrix.Core.Pixels
+﻿using LEDMatrix.Core.Vectors;
+
+namespace LEDMatrix.Core.Pixels
 {
     public abstract class PixelModifierBase : PixelSetterBase, IPixelModifier
     {

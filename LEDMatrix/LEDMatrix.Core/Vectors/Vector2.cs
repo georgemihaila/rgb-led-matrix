@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LEDMatrix.Core
+namespace LEDMatrix.Core.Vectors
 {
-    public class Vector2<T> 
-        where T: struct
+    public class Vector2<T>
+        where T : struct
     {
         public Vector2(T x, T y)
         {

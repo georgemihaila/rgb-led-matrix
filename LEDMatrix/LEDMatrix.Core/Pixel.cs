@@ -1,4 +1,6 @@
-﻿namespace LEDMatrix.Core
+﻿using LEDMatrix.Core.Vectors;
+
+namespace LEDMatrix.Core
 {
     public class Pixel
     {

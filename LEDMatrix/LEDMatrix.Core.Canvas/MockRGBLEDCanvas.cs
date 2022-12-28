@@ -1,5 +1,6 @@
 ﻿using LEDMatrix.Core.Fonts;
 using LEDMatrix.Core.Pixels;
+using LEDMatrix.Core.Vectors;
 
 namespace LEDMatrix.Core.Canvas
 {
