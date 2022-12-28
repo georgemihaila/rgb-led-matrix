@@ -54,6 +54,6 @@ Console.WriteLine("Listening for queue messages...");
 channel.BasicConsume(Constants.DEFAULT_QUEUE_NAME, true, consumer);
 while (true)
 {
-    canvas = matrix.SwapOnVsync(canvas);
+    //canvas = matrix.SwapOnVsync(canvas);
     animations.Update();
 }
