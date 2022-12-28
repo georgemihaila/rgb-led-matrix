@@ -12,13 +12,11 @@ namespace LEDMatrix.Core.Canvas.Drawing
     {
         protected PixelValueGetter(IRGBLEDCanvas canvas, Pixel to)
         {
-            Canvas = canvas;
             To = to;
             From = canvas.GetPixel(to);
         }
 
         public Pixel From { get; }
-        public IRGBLEDCanvas Canvas { get; }
         public Pixel To { get; }
     }
 }
