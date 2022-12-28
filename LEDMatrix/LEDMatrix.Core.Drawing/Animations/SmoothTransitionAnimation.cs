@@ -17,9 +17,9 @@ namespace LEDMatrix.Core.Canvas.Drawing.Animations
             _transitionPerMillisecond = (action.To.Color - From.Color) / DurationMilliseconds;
         }
 
-        protected override void OnUpdateInternal(IRGBLEDCanvas canvas, AnimationUpdateParams updateParams)
+        protected override void OnUpdateInternal(AnimationUpdateParams updateParams)
         {
-            canvas.AddColorToPixel(From.Position, (_transitionPerMillisecond * updateParams.MillisecondsSinceLastUpdate).ToColor());
+            Canvas.AddColorToPixel(From.Position, (_transitionPerMillisecond * updateParams.MillisecondsSinceLastUpdate).ToColor());
         }
 
         public override string ToString() => GetType().Name;

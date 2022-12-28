@@ -72,7 +72,7 @@ Console.WriteLine("Initialized Mock RGB LED matrix");
                 {
                     canvas = matrix.SwapOnVsync(canvas);
                     canvas.Clear();
-                    animations.Update(canvas);
+                    animations.Update();
                     canvas.SetPixel(canvas.Width - 1, canvas.Height - 1, Color.Red);
                 }
 

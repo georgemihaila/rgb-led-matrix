@@ -21,17 +21,17 @@ namespace LEDMatrix.Core.Canvas.Drawing.Animations
             _action = action;
             DurationMilliseconds = durationMilliseconds;
         }
-        protected abstract void OnUpdateInternal(IRGBLEDCanvas canvas, AnimationUpdateParams updateParams);
-        public void Update(IRGBLEDCanvas canvas)
+        protected abstract void OnUpdateInternal(AnimationUpdateParams updateParams);
+        public void Update()
         {
             if (!Completed)
             {
                 _animationUpdateParams.MarkUpdated();
-                OnUpdateInternal(canvas, _animationUpdateParams);
+                OnUpdateInternal(_animationUpdateParams);
                 if (_animationUpdateParams.MillisecondsSinceStarted >= DurationMilliseconds)
                 {
                     Completed = true;
-                    canvas.SetPixel(To);
+                    Canvas.SetPixel(To);
                     OnAnimationCompleted?.Invoke(this, _animationUpdateParams.BuildStatistics());
                 }
             }

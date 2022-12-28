@@ -28,14 +28,14 @@ namespace LEDMatrix.Core.Canvas.Drawing.Animations.Collections
             }
         }
 
-        public override void Update(IRGBLEDCanvas canvas)
+        public override void Update()
         {
             IEnumerable<IAnimation> copy;
             lock (_animationsLockObj)
                 copy = _animations.ToList();
             foreach (var animation in copy)
             {
-                animation.Update(canvas);
+                animation.Update();
             }
         }
     }
