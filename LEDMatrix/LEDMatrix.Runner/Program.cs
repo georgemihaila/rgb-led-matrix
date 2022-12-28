@@ -30,7 +30,9 @@ new RGBLedMatrix(new RGBLedMatrixOptions()
     GpioSlowdown = 2,
     Rows = 64,
     Cols = 64,
-    ChainLength = 4
+    ChainLength = 4,
+    HardwareMapping = "default",
+    ScanMode = 1
 });
 Console.WriteLine("Initialized RGB LED matrix");
 #endif
