@@ -1,4 +1,5 @@
 using LEDMatrix.Core;
+using LEDMatrix.Core.Canvas.Drawing.Animations;
 using LEDMatrix.Core.Pixels;
 using LEDMatrix.Server.Infra;
 
@@ -10,10 +11,17 @@ namespace LEDMatrix.Controllers
     [Route("api/[controller]/[action]")]
     public class AnimationController : ControllerBase
     {
+        private readonly AnimationFinder _animationFinder;
+
+        public AnimationController(AnimationFinder animationFinder)
+        {
+            _animationFinder = animationFinder;
+        }
+
         [HttpPost]
         public IEnumerable<string> ListAnimations()
         {
-            yield return "";
+            return _animationFinder.FindAllConcreteAnimations().Select(x => x.Name);
         }
     }
 }

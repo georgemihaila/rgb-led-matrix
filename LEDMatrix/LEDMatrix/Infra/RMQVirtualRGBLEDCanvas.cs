@@ -4,6 +4,8 @@ using LEDMatrix.Core.Canvas.Drawing.Actions.Pixels;
 using LEDMatrix.Core.Fonts;
 using LEDMatrix.Core.Canvas.Drawing.Drawing.Actions.Pixels;
 using LEDMatrix.Core.Vectors;
+using LEDMatrix.Core.Invocation;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace LEDMatrix.Server.Infra
 {
@@ -20,27 +22,28 @@ namespace LEDMatrix.Server.Infra
         public int Height { get; private set; } = 64;
         public void Clear()
         {
-           
+            _drawActionProducer.SendActionToQueue(MethodInvocationDescriptor.From("Clear"));
         }
 
         public void DrawCircle(int x0, int y0, int radius, Color color)
         {
-           
+            _drawActionProducer.SendActionToQueue(MethodInvocationDescriptor.From("DrawCircle", x0, y0, radius, color));
         }
 
         public void DrawLine(int x0, int y0, int x1, int y1, Color color)
         {
-           
+            _drawActionProducer.SendActionToQueue(MethodInvocationDescriptor.From("DrawLine", x0, y0, x1, y1, color));
         }
 
         public int DrawText(RGBLedFont font, int x, int y, Color color, string text, int spacing = 0, bool vertical = false)
         {
+            _drawActionProducer.SendActionToQueue(MethodInvocationDescriptor.From("DrawText", font, x, y, color, text, spacing, vertical));
             return 0;
         }
 
         public void Fill(Color color)
         {
-           
+            _drawActionProducer.SendActionToQueue(MethodInvocationDescriptor.FromInstance("Fill", color));
         }
 
         public Pixel GetPixel(int x, int y)
@@ -55,12 +58,12 @@ namespace LEDMatrix.Server.Infra
 
         public override void SetPixel(int x, int y, Color color)
         {
-            _drawActionProducer.SendActionToQueue(new SetPixelAction(this, new Pixel(x, y, color)));
+            _drawActionProducer.SendActionToQueue(MethodInvocationDescriptor.FromInstance("SetPixel", color));
         }
 
         public void AddColorToPixel(int x, int y, Color color)
         {
-            _drawActionProducer.SendActionToQueue(new AddColorToPixelAction(this, x, y, color));
+            _drawActionProducer.SendActionToQueue(MethodInvocationDescriptor.FromInstance("AddColorToPixelAction", color));
         }
 
         public void AddColorToPixel(Vector2<int> position, Color color) => AddColorToPixel(position.X, position.Y, color);

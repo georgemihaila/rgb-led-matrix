@@ -1,9 +1,9 @@
-﻿using LEDMatrix.Core.Canvas.Drawing;
+﻿using LEDMatrix.Core.Invocation;
 
 namespace LEDMatrix.Server.Infra
 {
     public interface IDrawActionProducer
     {
-        public void SendActionToQueue<T>(T message) where T: IDrawAction;
+        public void SendActionToQueue(MethodInvocationDescriptor message);
     }
 }

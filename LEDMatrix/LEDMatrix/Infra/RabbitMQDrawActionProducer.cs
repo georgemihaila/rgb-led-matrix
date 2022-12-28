@@ -1,4 +1,6 @@
 ﻿using LEDMatrix.Core.Canvas.Drawing;
+using LEDMatrix.Core.Invocation;
+
 using Newtonsoft.Json;
 
 using RabbitMQ.Client;
@@ -10,7 +12,7 @@ namespace LEDMatrix.Server.Infra
 {
     public class RabbitMQDrawActionProducer : IDrawActionProducer
     {
-        public void SendActionToQueue<T>(T message) where T : IDrawAction
+        public void SendActionToQueue(MethodInvocationDescriptor message)
         {
             var factory = new ConnectionFactory { HostName = "10.10.0.241", UserName = "ledpanel", Password = "ledpanel" };
             var connection = factory.CreateConnection();

@@ -6,8 +6,9 @@ namespace LEDMatrix.Core.Canvas
 {
     public class MockRGBLEDCanvas : PixelModifierBase, IRGBLEDCanvas
     {
-        public int Width { get; }
-        public int Height { get; }
+        public int Width { get; set; }
+        public int Height { get; set; }
+        VirtualCanvas VirtualCanvas { get; set; } = new(64, 64, () => Color.Black);
         public void Clear()
         {
              

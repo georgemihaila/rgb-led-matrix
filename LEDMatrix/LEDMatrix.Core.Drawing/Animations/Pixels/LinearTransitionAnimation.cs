@@ -19,7 +19,7 @@ namespace LEDMatrix.Core.Canvas.Drawing.Animations.Pixels
 
         protected override void OnUpdateInternal(IRGBLEDCanvas canvas, AnimationUpdateParams updateParams)
         {
-            canvas.AddColorToPixel(From.Position, (_transitionPerMillisecond * updateParams.MillisecondsSinceLastUpdate).ToColor());
+            canvas.AddColorToPixel(From.Position, (_colorTransitionPerMillisecond * updateParams.MillisecondsSinceLastUpdate).ToColor());
         }
 
         public override string ToString() => GetType().Name;

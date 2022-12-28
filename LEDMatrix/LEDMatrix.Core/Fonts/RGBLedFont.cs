@@ -18,7 +18,12 @@ namespace LEDMatrix.Core.Fonts
 
         public RGBLedFont(string bdf_font_file_path)
         {
-            _font = load_font(bdf_font_file_path);
+            _font =
+#if DEBUG
+            IntPtr.Zero;
+#else
+            load_font(bdf_font_file_path);
+#endif
         }
         internal IntPtr _font;
 
@@ -30,7 +35,7 @@ namespace LEDMatrix.Core.Fonts
                 return vertical_draw_text(canvas, _font, x, y, color.R, color.G, color.B, text, spacing);
         }
 
-        #region IDisposable Support
+#region IDisposable Support
         private bool disposedValue = false;
 
         protected virtual void Dispose(bool disposing)
@@ -50,6 +55,6 @@ namespace LEDMatrix.Core.Fonts
             Dispose(true);
             GC.SuppressFinalize(this);
         }
-        #endregion
+#endregion
     }
 }

@@ -11,6 +11,8 @@ using Constants = LEDMatrix.Core.Constants;
 using LEDMatrix.Core.Canvas.Drawing.Animations;
 using LEDMatrix.Core.Canvas.Drawing.Actions.Pixels;
 using LEDMatrix.Core.Canvas.Drawing.Animations.Collections;
+using Newtonsoft.Json;
+using LEDMatrix.Core.Invocation;
 
 namespace LEDMatrix.Runner
 {
@@ -52,17 +54,11 @@ Console.WriteLine("Initialized Mock RGB LED matrix");
                 consumer.Received += (model, eventArgs) =>
                 {
                     var body = eventArgs.Body.ToArray();
-                    var message = Encoding.UTF8.GetString(body);
-                    Console.WriteLine(message);
+                    var message = JsonConvert.DeserializeObject<MethodInvocationDescriptor>(Encoding.UTF8.GetString(body));
+                    Console.WriteLine(JsonConvert.SerializeObject(message));
 
                     var builder = new AnimationBuilder(canvas);
-                    for(int x = 0; x < 4; x++)
-                    {
-                        for (int y = 0; y < 4; y++)
-                        {
-                            animations.Add(builder.AddPixelTransition(new Pixel(60, 60, Color.Random), 5000).Build());
-                        }
-                    }
+                    //Add animations
                     animations.Play();
                     canvas.Clear();
                 };
@@ -73,7 +69,6 @@ Console.WriteLine("Initialized Mock RGB LED matrix");
                     canvas = matrix.SwapOnVsync(canvas);
                     canvas.Clear();
                     animations.Update(canvas);
-                    canvas.DrawText(new Core.Fonts.RGBLedFont("/root/rpi-rgbledmatrix-glsl/rpi-rgb-led-matrix/fonts/7x14B.bdf"), 0, 8, Color.White, $"{DateTime.Now.ToString("hh:mm:ss:f")}");
                 }
 
             }
