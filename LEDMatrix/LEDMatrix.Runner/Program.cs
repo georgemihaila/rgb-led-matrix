@@ -56,8 +56,13 @@ Console.WriteLine("Initialized Mock RGB LED matrix");
                     Console.WriteLine(message);
 
                     var builder = new AnimationBuilder(canvas);
-                    animations.Add(builder.AddPixelTransition(new Pixel(0, 0, Color.Red), 1000).Build());
-                    animations.Add(builder.AddPixelTransition(new Pixel(31, 31, Color.Red), 5000).Build());
+                    for(int x = 0; x < 32; x++)
+                    {
+                        for (int y = 0; y < 32; y++)
+                        {
+                            animations.Add(builder.AddPixelTransition(new Pixel(x, y, Color.Random), 5000).Build());
+                        }
+                    }
                     animations.Play();
                     canvas.Clear();
                 };
@@ -66,6 +71,7 @@ Console.WriteLine("Initialized Mock RGB LED matrix");
                 while (true)
                 {
                     canvas = matrix.SwapOnVsync(canvas);
+                    canvas.Clear();
                     animations.Update();
                 }
 
