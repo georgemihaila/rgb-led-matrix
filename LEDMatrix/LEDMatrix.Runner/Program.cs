@@ -57,4 +57,5 @@ while (true)
 {
     canvas = matrix.SwapOnVsync(canvas);
     animations.Update();
+    canvas.SetPixel(31, 0, Color.Red);
 }
