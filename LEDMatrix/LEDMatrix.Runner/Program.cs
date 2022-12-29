@@ -28,8 +28,7 @@ namespace LEDMatrix.Runner
             using (var channel = connection.CreateModel())
             {
                 channel.QueueBind(DEFAULT_QUEUE_NAME, DEFAULT_EXCHANGE_NAME, ROUTING_KEY);
-
-                //channel.QueueDeclare(LEDMatrix.Core.Constants.DEFAULT_EXCHANGE_NAME);
+                channel.QueueDeclare(queue: DEFAULT_QUEUE_NAME, exclusive: false, durable: true, autoDelete: false);
 
                 var matrix =
 #if DEBUG
