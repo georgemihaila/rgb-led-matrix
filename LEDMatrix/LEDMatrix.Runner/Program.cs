@@ -67,5 +67,9 @@ while (true)
     canvas = matrix.SwapOnVsync(canvas);
     canvas.Clear();
     animations.Update(canvas);
+    if (directInvocationSubscription.Channel.IsClosed)
+    {
+        throw new Exception("Channel closed");
+    }
     //matrix.Refresh(canvas);
 }
