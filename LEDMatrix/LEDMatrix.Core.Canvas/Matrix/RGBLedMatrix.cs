@@ -164,13 +164,10 @@ namespace LEDMatrix.Core.Matrix
 
         public void Refresh(RGBLedCanvas canvas)
         {
-            for (int x = 0; x < canvas.Width; x++)
+            foreach(var pixel in canvas.Pixels.ToList())
             {
-                for (int y = 0; y < canvas.Height; y++)
-                {
-                    canvas.SetPixel(canvas.GetPixel(x, y));
-                }
-            }    
+                canvas.SetPixel(pixel);
+            }
         }
 
         #endregion

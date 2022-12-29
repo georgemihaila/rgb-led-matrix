@@ -51,6 +51,8 @@ namespace LEDMatrix.Core
         public static Color operator -(Color a, Color b) => new(a.R - b.R, a.G - b.G, a.B - b.B);
         public static Color operator +(Color a, Color b) => new(a.R + b.R, a.G + b.G, a.B + b.B);
         public static Color operator +(Color c, DoubleVector3 vector3) => new(c.R + vector3.X, c.G + vector3.Y, c.B + vector3.Z);
+        public static bool operator ==(Color a, Color b) => a.R == b.R && a.G == b.G && a.B == b.B;
+        public static bool operator !=(Color a, Color b) => a.R != b.R || a.G != b.G || a.B != b.B;
         public override string ToString() => $"R: {R} G: {G} B: {B}";
     }
 }

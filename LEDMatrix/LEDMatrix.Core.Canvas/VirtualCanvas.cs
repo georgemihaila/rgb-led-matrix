@@ -27,6 +27,10 @@ namespace LEDMatrix.Core.Canvas
             }
             set
             {
+                var defaultColor = _defaultColorFunc();
+                if (value == defaultColor)
+                    _pixels.Remove((position.X, position.Y));
+
                 this[position.X, position.Y] = value;
             }
         }
@@ -49,6 +53,7 @@ namespace LEDMatrix.Core.Canvas
                 _pixels[(x, y)] = value;
             }
         }
+        public IEnumerable<Pixel> Pixels => _pixels.Keys.Select(x => new Pixel(x.Item1, x.Item2, _pixels[x]));
         public int Width { get; private set; }
         public int Height { get; private set; }
     }

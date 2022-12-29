@@ -83,5 +83,6 @@ namespace LEDMatrix.Core.Canvas
         }
 
         public override Pixel GetPixel(int x, int y) => new(x, y, VirtualCanvas[x, y]);
+        public IEnumerable<Pixel> Pixels => VirtualCanvas.Pixels;;
     }
 }
