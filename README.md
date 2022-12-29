@@ -64,4 +64,4 @@ Update and build the solution.  This script automatically manages the background
 
 `./update.sh`
 
-Done. The web API should be available on the local network at `http://[ip]:5050`
+Done. The web API should be available on the local network at `http://[ip]:5050/swagger/index.html`
