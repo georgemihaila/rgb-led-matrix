@@ -33,12 +33,7 @@ namespace LEDMatrix.Core
 #endif
             ;
             public const string PASSWORD = "ledpanel";
-            public const string ROUTING_KEY =
-#if DEBUG
-                "debug"
-#else
-            "release"
-#endif
+            public const string ROUTING_KEY = string.Empty;
                 ;
         }
     }
