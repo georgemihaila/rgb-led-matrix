@@ -54,5 +54,26 @@ namespace LEDMatrix.Core
         public static bool operator ==(Color a, Color b) => a.R == b.R && a.G == b.G && a.B == b.B;
         public static bool operator !=(Color a, Color b) => a.R != b.R || a.G != b.G || a.B != b.B;
         public override string ToString() => $"R: {R} G: {G} B: {B}";
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (ReferenceEquals(obj, null))
+            {
+                return false;
+            }
+
+            if (!obj.GetType().IsAssignableFrom(GetType()))
+                return false;
+
+            var o = (Color)obj;
+            return o.R == R && o.G == G && o.B == B;
+        }
+
+        public override int GetHashCode() => R * G * B;
     }
 }

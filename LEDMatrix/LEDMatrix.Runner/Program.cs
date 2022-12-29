@@ -1,23 +1,18 @@
 ﻿using LEDMatrix.Core.Matrix;
 
-using RabbitMQ.Client;
-using RabbitMQ.Client.Events;
-
 using System.Text;
 using LEDMatrix.Core.Canvas.Drawing.Animations.Collections;
 using Newtonsoft.Json;
 using static LEDMatrix.Core.Constants.RMQ;
 using LEDMatrix.AssemblyHelper.Invocation;
+using LEDMatrix.Core.Canvas.Drawing.Remote.Subscription;
 #if RELEASE
 using LEDMatrix.Core.Canvas.Drawing.Options;
 #endif
 
-var factory = new ConnectionFactory { HostName = HOSTNAME, UserName = USERNAME, Password = PASSWORD };
-var connection = factory.CreateConnection();
-var channel = connection.CreateModel();
-channel.QueueDeclare(queue: DEFAULT_QUEUE_NAME, exclusive: false, durable: true, autoDelete: false);
-channel.QueueBind(DEFAULT_QUEUE_NAME, DEFAULT_EXCHANGE_NAME, ROUTING_KEY);
-channel.CallbackException += (chann, args) =>
+var subscriber = new QueueSubscriber(HOSTNAME, USERNAME, PASSWORD, DEFAULT_EXCHANGE_NAME);
+var directInvocationSubscription = subscriber.CreateQueueSubscription(DIRECT_INVOCATION_QUEUE_NAME, ROUTING_KEY);
+directInvocationSubscription.CallbackException += (chann, args) =>
 {
     Console.WriteLine(JsonConvert.SerializeObject(args));
 };
@@ -43,8 +38,7 @@ var canvas = matrix.GetCanvas();
 canvas.Clear();
 Console.WriteLine($"Initialized RGB LED matrix with size {canvas.Width}x{canvas.Height}");
 var animations = new ParallelAggregatedAnimation(true);
-var consumer = new EventingBasicConsumer(channel);
-consumer.Received += (model, eventArgs) =>
+directInvocationSubscription.MessageReceived += (model, eventArgs) =>
 {
     try
     {
@@ -65,11 +59,9 @@ consumer.Received += (model, eventArgs) =>
     }
     finally
     {
-        channel.BasicAck(eventArgs.DeliveryTag, false);
+        directInvocationSubscription.Channel.BasicAck(eventArgs.DeliveryTag, false);
     }
 };
-Console.WriteLine(channel.BasicConsume(DEFAULT_QUEUE_NAME, false, consumer));
-Console.WriteLine($"Listening for queue messages on exchange {DEFAULT_EXCHANGE_NAME}, queue {DEFAULT_QUEUE_NAME}, key {ROUTING_KEY}...");
 while (true)
 {
     canvas = matrix.SwapOnVsync(canvas);
