@@ -53,7 +53,7 @@ namespace LEDMatrix.Runner
                 Console.WriteLine($"Initialized RGB LED matrix with size {canvas.Width}x{canvas.Height}");
                 var animations = new ParallelAggregatedAnimation(true);
                 var consumer = new EventingBasicConsumer(channel);
-                consumer.OnMessage((sender, eventArgs) =>
+                consumer.Received += (model, eventArgs) =>
                 {
                     try
                     {
@@ -72,10 +72,10 @@ namespace LEDMatrix.Runner
                     {
                         Console.WriteLine(e);
                     }
-                });
+                };
                 Console.WriteLine(channel.BasicConsume(DEFAULT_QUEUE_NAME, true, consumer));
                 Console.WriteLine($"Listening for queue messages on exchange {DEFAULT_EXCHANGE_NAME}, queue {DEFAULT_QUEUE_NAME}, key {ROUTING_KEY}...");
-
+                channel.
                 while (true)
                 {
                     canvas = matrix.SwapOnVsync(canvas);
