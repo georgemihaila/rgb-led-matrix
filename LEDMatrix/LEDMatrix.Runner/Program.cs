@@ -55,17 +55,27 @@ Console.WriteLine("Initialized Mock RGB LED matrix");
                 var consumer = new EventingBasicConsumer(channel);
                 consumer.Received += (model, eventArgs) =>
                 {
-                    var body = eventArgs.Body.ToArray();
-                    var str = Encoding.UTF8.GetString(body);
-                    Console.WriteLine(str);
-                    var message = JsonConvert.DeserializeObject<MethodInvocationDescriptor>(str);
-                    message.InvokeOn(canvas);
-                    channel.BasicAck(eventArgs.DeliveryTag, false);
-                    /*
-                    var builder = new AnimationBuilder(canvas);
-                    //Add animations
-                    animations.Play();
-                    canvas.Clear();*/
+                    try
+                    {
+                        var body = eventArgs.Body.ToArray();
+                        var str = Encoding.UTF8.GetString(body);
+                        Console.WriteLine(str);
+                        var message = JsonConvert.DeserializeObject<MethodInvocationDescriptor>(str);
+                        message.InvokeOn(canvas);
+                        /*
+                        var builder = new AnimationBuilder(canvas);
+                        //Add animations
+                        animations.Play();
+                        canvas.Clear();*/
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(e);
+                    }
+                    finally
+                    {
+                        channel.BasicAck(eventArgs.DeliveryTag, false);
+                    }
                 };
                 Console.WriteLine($"Listening for queue messages on exchange {DEFAULT_EXCHANGE_NAME}, queue {DEFAULT_QUEUE_NAME}, key {ROUTING_KEY}...");
                 channel.BasicConsume(DEFAULT_QUEUE_NAME, false, consumer);
