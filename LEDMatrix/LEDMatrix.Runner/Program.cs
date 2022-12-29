@@ -55,8 +55,9 @@ Console.WriteLine("Initialized Mock RGB LED matrix");
                 consumer.Received += (model, eventArgs) =>
                 {
                     var body = eventArgs.Body.ToArray();
-                    var message = JsonConvert.DeserializeObject<MethodInvocationDescriptor>(Encoding.UTF8.GetString(body));
-                    Console.WriteLine(JsonConvert.SerializeObject(message));
+                    var str = Encoding.UTF8.GetString(body);
+                    Console.WriteLine(str);
+                    var message = JsonConvert.DeserializeObject<MethodInvocationDescriptor>(str);
                     message.InvokeOn(canvas);
                     /*
                     var builder = new AnimationBuilder(canvas);
