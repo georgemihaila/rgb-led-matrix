@@ -44,7 +44,7 @@ Console.WriteLine("Initialized Mock RGB LED matrix");
                     HardwareMapping = "regular",
                     ScanMode = 1,
                     PixelMapperConfig = "U-mapper",
-                    ShowRefreshRate = true
+                    //ShowRefreshRate = true
                 });
 #endif
                 var canvas = matrix.GetCanvas();
@@ -64,7 +64,7 @@ Console.WriteLine("Initialized Mock RGB LED matrix");
                     animations.Play();
                     canvas.Clear();*/
                 };
-                Console.WriteLine("Listening for queue messages...");
+                Console.WriteLine($"Listening for queue messages on exchange {DEFAULT_EXCHANGE_NAME}, queue {DEFAULT_QUEUE_NAME}, key {ROUTING_KEY}...");
                 channel.BasicConsume(DEFAULT_QUEUE_NAME, true, consumer);
                 while (true)
                 {

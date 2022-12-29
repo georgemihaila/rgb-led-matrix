@@ -29,6 +29,7 @@ namespace LEDMatrix.Core.Canvas.Drawing.Remote.DrawActions
 
         public void SendActionToQueue(MethodInvocationDescriptor message)
         {
+            Console.WriteLine($"Initializing connection on exchange {_exchangeName}, queue {_queueName}, key {_routingKey}...");
             var factory = new ConnectionFactory { HostName = _hostName, UserName = _username, Password = _password };
             var connection = factory.CreateConnection();
             using (var channel = connection.CreateModel())
