@@ -6,59 +6,34 @@ using Newtonsoft.Json;
 
 namespace LEDMatrix.Core.Canvas
 {
-    public class MockRGBLEDCanvas : PixelModifierBase, IRGBLEDCanvas
+    public class MockRGBLEDCanvas : CanvasWithVirtualCanvas
     {
-        public int Width
+        public MockRGBLEDCanvas(int width, int height) : base(width, height)
         {
-            get
-            {
-                return VirtualCanvas.Width;
-            }
-            set
-            {
-                VirtualCanvas = new(value, VirtualCanvas.Height, _backgroundColorFunc);
-            }
-        }
-        public int Height
-        {
-            get
-            {
-                return VirtualCanvas.Height;
-            }
-            set
-            {
-                VirtualCanvas = new(VirtualCanvas.Width, value, _backgroundColorFunc);
-            }
-        }
-        private readonly Func<Color> _backgroundColorFunc = () => Color.Black;
-        VirtualCanvas VirtualCanvas { get; set; }
-        public MockRGBLEDCanvas()
-        {
-            VirtualCanvas = new(64, 64, _backgroundColorFunc);
         }
 
-        public void Clear()
+        public override void Clear()
         {
             //Console.WriteLine("Cleared matrix");
         }
 
-        public void DrawCircle(int x0, int y0, int radius, Color color)
+        public override void DrawCircle(int x0, int y0, int radius, Color color)
         {
             Console.WriteLine($"Draw circle {JsonConvert.SerializeObject(new { x0, y0, radius, color })}");
         }
 
-        public void DrawLine(int x0, int y0, int x1, int y1, Color color)
+        public override void DrawLine(int x0, int y0, int x1, int y1, Color color)
         {
             Console.WriteLine($"Draw line {JsonConvert.SerializeObject(new { x0, y0, x1, y1, color })}");
         }
 
-        public int DrawText(RGBLedFont font, int x, int y, Color color, string text, int spacing = 0, bool vertical = false)
+        public override int DrawText(RGBLedFont font, int x, int y, Color color, string text, int spacing = 0, bool vertical = false)
         {
             Console.WriteLine($"Draw text {JsonConvert.SerializeObject(new { font, x, y, color, text, spacing, vertical })}");
             return 0;    
         }
 
-        public void Fill(Color color)
+        public override void Fill(Color color)
         {
             Console.WriteLine($"Fill {color}");
         }

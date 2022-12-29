@@ -10,7 +10,7 @@ namespace LEDMatrix.Core.Matrix
 {
     public class MockRGBLEDMatrix : IRGBLEDMatrix<MockRGBLEDCanvas>
     {
-        private readonly MockRGBLEDCanvas _canvas = new();
+        private readonly MockRGBLEDCanvas _canvas = new(128, 128);
         public byte Brightness { get; set; }
 
         public MockRGBLEDCanvas CreateOffscreenCanvas()

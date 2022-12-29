@@ -1,4 +1,5 @@
 ﻿using LEDMatrix.Core;
+using LEDMatrix.Core.Vectors;
 
 using Newtonsoft.Json;
 
@@ -41,9 +42,9 @@ namespace LEDMatrix.AssemblyHelper.Invocation
             var methods = instance?.GetType().GetMethods();
             if (methods != null)
             {
-                if (methods.Any(x => x.Name == MethodName))
+                if (methods.Any(x => x.Name == MethodName && x.GetParameters().Length == Parameters?.Length))
                 {
-                    var method = methods.First(x => x.Name == MethodName);
+                    var method = methods.First(x => x.Name == MethodName && x.GetParameters().Length == Parameters?.Length);
                     var parameters = method.GetParameters();
                     var methodParameters = new List<object>();
                     if (parameters != null)
@@ -52,15 +53,19 @@ namespace LEDMatrix.AssemblyHelper.Invocation
                         {
 #pragma warning disable CS8629 // Nullable value type may be null.
 #pragma warning disable CS8602 // Dereference of a possibly null reference.
-                            if ((bool)(Parameters?.Any(x => x.Name.Equals(parameter.Name))))
+                            if ((bool)(Parameters?.Any(x => x.Name.ToUpper().Equals(parameter.Name.ToUpper()))))
                             {
-                                var p = Parameters?.First(x => x.Name.Equals(parameter.Name));
+                                var p = Parameters?.First(x => x.Name.ToUpper().Equals(parameter.Name.ToUpper()));
                                 object? o = null;
                                 if (p.Type != null)
                                 {
                                     if (p.Type == typeof(Color))
                                     {
                                         o = JsonConvert.DeserializeObject<Color>(JsonConvert.SerializeObject(p.Value));
+                                    }
+                                    else if (p.Type == typeof(Vector2<int>))
+                                    {
+                                        o = JsonConvert.DeserializeObject<Vector2<int>>(JsonConvert.SerializeObject(p.Value));
                                     }
                                     else
                                     {
