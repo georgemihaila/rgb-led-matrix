@@ -1,4 +1,4 @@
-﻿using LEDMatrix.Core.Canvas.Drawing.Remote.DrawActions.Invocation;
+﻿using LEDMatrix.AssemblyHelper.Invocation;
 
 using Newtonsoft.Json;
 

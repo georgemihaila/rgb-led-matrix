@@ -1,5 +1,4 @@
-﻿
-using LEDMatrix.Core.Canvas.Drawing.Remote.DrawActions.Invocation;
+﻿using LEDMatrix.AssemblyHelper.Invocation;
 
 namespace LEDMatrix.Core.Canvas.Drawing.Remote.DrawActions
 {

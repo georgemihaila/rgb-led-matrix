@@ -1,5 +1,7 @@
 ﻿using LEDMatrix.Core.Vectors;
 
+using Newtonsoft.Json;
+
 using System;
 using System.Collections.Generic;
 using System.Data.Common;
@@ -11,6 +13,15 @@ namespace LEDMatrix.Core
 {
     public class Color
     {
+        /*
+        public Color(string json) : base(json)
+        {
+            var obj = JsonConvert.DeserializeObject<Color>(json);
+            R = obj.R;
+            G = obj.G;
+            B = obj.B;
+        }
+        */
         public Color() { }
         public Color(double r, double g, double b) : this((byte)r, (byte)b, (byte)b) { }
         public Color(byte r, byte g, byte b)

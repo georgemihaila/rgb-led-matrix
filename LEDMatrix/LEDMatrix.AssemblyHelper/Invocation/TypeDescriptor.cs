@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LEDMatrix.Core.Canvas.Drawing.Remote.DrawActions.Invocation
+namespace LEDMatrix.AssemblyHelper.Invocation
 {
-    public sealed class TypeDescriptor
+    public class TypeDescriptor
     {
         public Type? Type { get; set; }
         public object? Value { get; set; }

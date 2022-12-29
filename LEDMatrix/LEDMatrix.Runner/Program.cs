@@ -13,7 +13,7 @@ using LEDMatrix.Core.Canvas.Drawing.Actions.Pixels;
 using LEDMatrix.Core.Canvas.Drawing.Animations.Collections;
 using Newtonsoft.Json;
 using static LEDMatrix.Core.Constants.RMQ;
-using LEDMatrix.Core.Canvas.Drawing.Remote.DrawActions.Invocation;
+using LEDMatrix.AssemblyHelper.Invocation;
 
 namespace LEDMatrix.Runner
 {
@@ -21,7 +21,7 @@ namespace LEDMatrix.Runner
     {
         public static void Main(string[] args)
         {
-            var factory = new ConnectionFactory { HostName = "10.10.0.241", UserName = "ledpanel", Password = "ledpanel" };
+            var factory = new ConnectionFactory { HostName = HOSTNAME, UserName = USERNAME, Password = PASSWORD };
             var connection = factory.CreateConnection();
             using (var channel = connection.CreateModel())
             {
@@ -57,11 +57,12 @@ Console.WriteLine("Initialized Mock RGB LED matrix");
                     var body = eventArgs.Body.ToArray();
                     var message = JsonConvert.DeserializeObject<MethodInvocationDescriptor>(Encoding.UTF8.GetString(body));
                     Console.WriteLine(JsonConvert.SerializeObject(message));
-
+                    message.InvokeOn(canvas);
+                    /*
                     var builder = new AnimationBuilder(canvas);
                     //Add animations
                     animations.Play();
-                    canvas.Clear();
+                    canvas.Clear();*/
                 };
                 Console.WriteLine("Listening for queue messages...");
                 channel.BasicConsume(DEFAULT_QUEUE_NAME, true, consumer);

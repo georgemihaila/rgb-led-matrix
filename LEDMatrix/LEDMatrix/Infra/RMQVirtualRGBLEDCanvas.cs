@@ -1,12 +1,9 @@
 ﻿using LEDMatrix.Core;
 using LEDMatrix.Core.Pixels;
-using LEDMatrix.Core.Canvas.Drawing.Actions.Pixels;
 using LEDMatrix.Core.Fonts;
-using LEDMatrix.Core.Canvas.Drawing.Drawing.Actions.Pixels;
 using LEDMatrix.Core.Vectors;
-using static System.Net.Mime.MediaTypeNames;
-using LEDMatrix.Core.Canvas.Drawing.Remote.DrawActions.Invocation;
 using LEDMatrix.Core.Canvas.Drawing.Remote.DrawActions;
+using LEDMatrix.AssemblyHelper.Invocation;
 
 namespace LEDMatrix.Server.Infra
 {
@@ -28,17 +25,17 @@ namespace LEDMatrix.Server.Infra
 
         public void DrawCircle(int x0, int y0, int radius, Color color)
         {
-            _drawActionProducer.SendActionToQueue(MethodInvocationDescriptor.From("DrawCircle", x0, y0, radius, color));
+            _drawActionProducer.SendActionToQueue(MethodInvocationDescriptor.From("DrawCircle", (nameof(x0), x0), (nameof(y0), y0), (nameof(radius), radius), (nameof(color), color)));
         }
 
         public void DrawLine(int x0, int y0, int x1, int y1, Color color)
         {
-            _drawActionProducer.SendActionToQueue(MethodInvocationDescriptor.From("DrawLine", x0, y0, x1, y1, color));
+            _drawActionProducer.SendActionToQueue(MethodInvocationDescriptor.From("DrawLine", (nameof(x0), x0), (nameof(y0), y0), (nameof(x1), x1), (nameof(y1), y1), (nameof(color), color)));
         }
 
         public int DrawText(RGBLedFont font, int x, int y, Color color, string text, int spacing = 0, bool vertical = false)
         {
-            _drawActionProducer.SendActionToQueue(MethodInvocationDescriptor.From("DrawText", font, x, y, color, text, spacing, vertical));
+            _drawActionProducer.SendActionToQueue(MethodInvocationDescriptor.From("DrawText", (nameof(font), font), (nameof(x), x), (nameof(y), y), (nameof(color), color), (nameof(text), text), (nameof(spacing), spacing), (nameof(vertical), vertical)));
             return 0;
         }
 

@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\LEDMatrix.AssemblyHelper\LEDMatrix.AssemblyHelper.csproj" />
     <ProjectReference Include="..\LEDMatrix.Core.Canvas\LEDMatrix.Core.Canvas.csproj" />
     <ProjectReference Include="..\LEDMatrix.Core.Drawing\LEDMatrix.Core.Canvas.Drawing.csproj" />
     <ProjectReference Include="..\LEDMatrix.Core\LEDMatrix.Core.csproj" />
