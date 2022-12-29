@@ -27,8 +27,8 @@ namespace LEDMatrix.Runner
             var connection = factory.CreateConnection();
             using (var channel = connection.CreateModel())
             {
-                channel.QueueBind(DEFAULT_QUEUE_NAME, DEFAULT_EXCHANGE_NAME, ROUTING_KEY);
                 channel.QueueDeclare(queue: DEFAULT_QUEUE_NAME, exclusive: false, durable: true, autoDelete: false);
+                channel.QueueBind(DEFAULT_QUEUE_NAME, DEFAULT_EXCHANGE_NAME, ROUTING_KEY);
 
                 var matrix =
 #if DEBUG
@@ -72,12 +72,8 @@ namespace LEDMatrix.Runner
                     {
                         Console.WriteLine(e);
                     }
-                    finally
-                    {
-                        channel.BasicAck(eventArgs.DeliveryTag, false);
-                    }
                 });
-                Console.WriteLine(channel.BasicConsume(DEFAULT_QUEUE_NAME, false, consumer));
+                Console.WriteLine(channel.BasicConsume(DEFAULT_QUEUE_NAME, true, consumer));
                 Console.WriteLine($"Listening for queue messages on exchange {DEFAULT_EXCHANGE_NAME}, queue {DEFAULT_QUEUE_NAME}, key {ROUTING_KEY}...");
 
                 while (true)
