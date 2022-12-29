@@ -25,7 +25,13 @@ namespace LEDMatrix.Core
 #endif
             ;
             public const string HOSTNAME = "10.10.0.241";
-            public const string USERNAME = "ledpanel";
+            public const string USERNAME =
+#if DEBUG
+                "ledpanel"
+#else
+            "ledpanelrelease"
+#endif
+            ;
             public const string PASSWORD = "ledpanel";
             public const string ROUTING_KEY =
 #if DEBUG
