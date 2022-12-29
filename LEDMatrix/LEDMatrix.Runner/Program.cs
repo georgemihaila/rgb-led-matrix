@@ -34,7 +34,7 @@ namespace LEDMatrix.Runner
                 var matrix =
 #if DEBUG
     new MockRGBLEDMatrix();
-Console.WriteLine("Initialized Mock RGB LED matrix");
+                Console.WriteLine("Initialized Mock RGB LED matrix");
 #else
                 new RGBLedMatrix(new RGBLedMatrixOptions()
                 {
@@ -78,9 +78,9 @@ Console.WriteLine("Initialized Mock RGB LED matrix");
                         channel.BasicAck(eventArgs.DeliveryTag, false);
                     }
                 });
-                channel.BasicConsume(DEFAULT_QUEUE_NAME, false, consumer);
+                Console.WriteLine(channel.BasicConsume(DEFAULT_QUEUE_NAME, false, consumer));
                 Console.WriteLine($"Listening for queue messages on exchange {DEFAULT_EXCHANGE_NAME}, queue {DEFAULT_QUEUE_NAME}, key {ROUTING_KEY}...");
-                
+
                 while (true)
                 {
                     canvas = matrix.SwapOnVsync(canvas);
