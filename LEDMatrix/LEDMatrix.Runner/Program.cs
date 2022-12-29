@@ -19,7 +19,7 @@ channel.QueueDeclare(queue: DEFAULT_QUEUE_NAME, exclusive: false, durable: true,
 channel.QueueBind(DEFAULT_QUEUE_NAME, DEFAULT_EXCHANGE_NAME, ROUTING_KEY);
 channel.CallbackException += (chann, args) =>
 {
-    Console.WriteLine(args);
+    Console.WriteLine(JsonConvert.SerializeObject(args));
 };
 var matrix =
 #if DEBUG
@@ -63,8 +63,12 @@ consumer.Received += (model, eventArgs) =>
     {
         Console.WriteLine(e);
     }
+    finally
+    {
+        channel.BasicAck(eventArgs.DeliveryTag, false);
+    }
 };
-Console.WriteLine(channel.BasicConsume(DEFAULT_QUEUE_NAME, true, consumer));
+Console.WriteLine(channel.BasicConsume(DEFAULT_QUEUE_NAME, false, consumer));
 Console.WriteLine($"Listening for queue messages on exchange {DEFAULT_EXCHANGE_NAME}, queue {DEFAULT_QUEUE_NAME}, key {ROUTING_KEY}...");
 while (true)
 {
