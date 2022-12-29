@@ -67,5 +67,5 @@ while (true)
     canvas = matrix.SwapOnVsync(canvas);
     canvas.Clear();
     animations.Update(canvas);
-    //matrix.Refresh(canvas);
+    matrix.Refresh(canvas);
 }
