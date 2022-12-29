@@ -1,3 +1,1 @@
-https://www.iotshaman.com/blog/content/how-to-install-rabbitmq-on-a-raspberry-pi
-
-https://elinux.org/Erlang
+# A framework for building and displaying animations on RGB displays using Raspberry Pis 
