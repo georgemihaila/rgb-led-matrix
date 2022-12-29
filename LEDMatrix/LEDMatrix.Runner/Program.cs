@@ -14,10 +14,13 @@ using LEDMatrix.Core.Canvas.Drawing.Options;
 
 var factory = new ConnectionFactory { HostName = HOSTNAME, UserName = USERNAME, Password = PASSWORD };
 var connection = factory.CreateConnection();
-using var channel = connection.CreateModel();
+var channel = connection.CreateModel();
 channel.QueueDeclare(queue: DEFAULT_QUEUE_NAME, exclusive: false, durable: true, autoDelete: false);
 channel.QueueBind(DEFAULT_QUEUE_NAME, DEFAULT_EXCHANGE_NAME, ROUTING_KEY);
-
+channel.CallbackException += (chann, args) =>
+{
+    Console.WriteLine(args);
+};
 var matrix =
 #if DEBUG
 new MockRGBLEDMatrix();
