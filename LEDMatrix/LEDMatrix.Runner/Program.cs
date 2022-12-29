@@ -15,6 +15,7 @@ using Newtonsoft.Json;
 using static LEDMatrix.Core.Constants.RMQ;
 using LEDMatrix.AssemblyHelper.Invocation;
 using System.Diagnostics;
+using RawRabbit.Consumer;
 
 namespace LEDMatrix.Runner
 {
@@ -53,7 +54,7 @@ Console.WriteLine("Initialized Mock RGB LED matrix");
                 Console.WriteLine($"Initialized RGB LED matrix with size {canvas.Width}x{canvas.Height}");
                 var animations = new ParallelAggregatedAnimation(true);
                 var consumer = new EventingBasicConsumer(channel);
-                consumer.Received += (model, eventArgs) =>
+                consumer.OnMessage((sender, eventArgs) =>
                 {
                     try
                     {
@@ -76,7 +77,7 @@ Console.WriteLine("Initialized Mock RGB LED matrix");
                     {
                         channel.BasicAck(eventArgs.DeliveryTag, false);
                     }
-                };
+                });
                 channel.BasicConsume(DEFAULT_QUEUE_NAME, false, consumer);
                 Console.WriteLine($"Listening for queue messages on exchange {DEFAULT_EXCHANGE_NAME}, queue {DEFAULT_QUEUE_NAME}, key {ROUTING_KEY}...");
                 
