@@ -4,8 +4,9 @@ using LEDMatrix.Core.Canvas.Drawing.Actions.Pixels;
 using LEDMatrix.Core.Fonts;
 using LEDMatrix.Core.Canvas.Drawing.Drawing.Actions.Pixels;
 using LEDMatrix.Core.Vectors;
-using LEDMatrix.Core.Invocation;
 using static System.Net.Mime.MediaTypeNames;
+using LEDMatrix.Core.Canvas.Drawing.Remote.DrawActions.Invocation;
+using LEDMatrix.Core.Canvas.Drawing.Remote.DrawActions;
 
 namespace LEDMatrix.Server.Infra
 {

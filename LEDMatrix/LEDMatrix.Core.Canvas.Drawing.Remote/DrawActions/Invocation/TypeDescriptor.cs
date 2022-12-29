@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LEDMatrix.Core.Invocation
+namespace LEDMatrix.Core.Canvas.Drawing.Remote.DrawActions.Invocation
 {
     public sealed class TypeDescriptor
     {
-        public Type Type { get; set; }
-        public object Value { get; set; }
+        public Type? Type { get; set; }
+        public object? Value { get; set; }
     }
 }

@@ -28,7 +28,7 @@ Make sure all dependencies are installed
 
 `make all`
 
-We have now build the dependencies the project will use in order to control the matrices
+We have now built the dependencies the project will use in order to control the matrices
 
 2. Set up the project
 

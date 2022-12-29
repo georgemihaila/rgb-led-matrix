@@ -1,6 +1,7 @@
-﻿using LEDMatrix.Core.Invocation;
+﻿
+using LEDMatrix.Core.Canvas.Drawing.Remote.DrawActions.Invocation;
 
-namespace LEDMatrix.Server.Infra
+namespace LEDMatrix.Core.Canvas.Drawing.Remote.DrawActions
 {
     public interface IDrawActionProducer
     {
