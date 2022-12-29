@@ -8,6 +8,9 @@ using LEDMatrix.Core.Canvas.Drawing.Animations.Collections;
 using Newtonsoft.Json;
 using static LEDMatrix.Core.Constants.RMQ;
 using LEDMatrix.AssemblyHelper.Invocation;
+#if RELEASE
+using LEDMatrix.Core.Canvas.Drawing.Options;
+#endif
 
 var factory = new ConnectionFactory { HostName = HOSTNAME, UserName = USERNAME, Password = PASSWORD };
 var connection = factory.CreateConnection();
