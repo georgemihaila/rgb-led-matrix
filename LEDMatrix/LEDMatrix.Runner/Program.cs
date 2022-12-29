@@ -78,7 +78,7 @@ Console.WriteLine("Initialized Mock RGB LED matrix");
                         channel.BasicAck(eventArgs.DeliveryTag, false);
                     }
                 });
-                channel.BasicConsume(DEFAULT_QUEUE_NAME, false, consumer);
+                Console.WriteLine(channel.BasicConsume(DEFAULT_QUEUE_NAME, false, consumer));
                 Console.WriteLine($"Listening for queue messages on exchange {DEFAULT_EXCHANGE_NAME}, queue {DEFAULT_QUEUE_NAME}, key {ROUTING_KEY}...");
                 
                 while (true)
