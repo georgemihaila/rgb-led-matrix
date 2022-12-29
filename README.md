@@ -9,12 +9,19 @@
 
 ### Setup
 1. Log into the RPi and set up rpi-rgb-led-matrix into the ~ directory as root user
+
 `sudo su -`
+
 `cd /home/pi`
+
 `git clone https://github.com/hzeller/rpi-rgb-led-matrix`
 `cd rpi-rgb-led-matrix`
+
 Make sure all dependencies are installed
+
 `make all`
+
 `cd bindings/c#`
+
 `make all`
 
