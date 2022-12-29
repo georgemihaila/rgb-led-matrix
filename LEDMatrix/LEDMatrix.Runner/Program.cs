@@ -25,7 +25,10 @@ namespace LEDMatrix.Runner
             var connection = factory.CreateConnection();
             using (var channel = connection.CreateModel())
             {
-                var queueName = "WebAPIQueue";
+                channel.QueueBind(DEFAULT_QUEUE_NAME, DEFAULT_EXCHANGE_NAME, ROUTING_KEY);
+
+                //channel.QueueDeclare(LEDMatrix.Core.Constants.DEFAULT_EXCHANGE_NAME);
+
                 var matrix =
 #if DEBUG
     new MockRGBLEDMatrix();
@@ -43,9 +46,7 @@ Console.WriteLine("Initialized Mock RGB LED matrix");
                     PixelMapperConfig = "U-mapper",
                     ShowRefreshRate = true
                 });
-                queueName = "WebAPIReleaseQueue";
 #endif
-                channel.QueueBind(queueName, DEFAULT_EXCHANGE_NAME, ROUTING_KEY);
                 var canvas = matrix.GetCanvas();
                 canvas.Clear();
                 Console.WriteLine($"Initialized RGB LED matrix with size {canvas.Width}x{canvas.Height}");
