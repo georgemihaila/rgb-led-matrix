@@ -164,9 +164,10 @@ namespace LEDMatrix.Core.Matrix
 
         public void Refresh(RGBLedCanvas canvas)
         {
-            foreach(var pixel in canvas.Pixels.ToList())
+            var c = GetCanvas();
+            foreach (var pixel in canvas.Pixels.ToList())
             {
-                canvas.SetPixel(pixel);
+                c.SetPixel(pixel);
             }
         }
 
