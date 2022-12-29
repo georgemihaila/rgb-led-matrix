@@ -65,7 +65,7 @@ directInvocationSubscription.MessageReceived += (model, eventArgs) =>
 while (true)
 {
     canvas = matrix.SwapOnVsync(canvas);
-    canvas.Clear();
+    //canvas.Clear();
     animations.Update(canvas);
     matrix.Refresh(canvas);
 }
