@@ -72,5 +72,12 @@ namespace LEDMatrix.Controllers
             _canvas.SetPixel(pixel);
             return Ok();
         }
+
+        [HttpPost]
+        public IActionResult SetPixels([FromBody] Pixel[] pixels)
+        {
+            _canvas.SetPixels(pixels);
+            return Ok();
+        }
     }
 }

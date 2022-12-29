@@ -10,5 +10,13 @@ namespace LEDMatrix.Core.Pixels
         public void SetPixel(Pixel pixel) => SetPixel(pixel.Position, pixel.Color);
 
         public void SetPixel(Vector2<int> position, Color color) => SetPixel(position.X, position.Y, color);
+
+        public void SetPixels(params Pixel[] pixels)
+        {
+            foreach(var pixel in pixels)
+            {
+                SetPixel(pixel);
+            }
+        }
     }
 }

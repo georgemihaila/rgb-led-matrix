@@ -59,22 +59,88 @@ namespace LEDMatrix.Core.Canvas
 
         public void Fill(Color color)
         {
+            VirtualCanvas.Fill(color);
             led_canvas_fill(_canvas, color.R, color.G, color.B);
         }
 
         public void Clear()
         {
+            VirtualCanvas.Clear();
             led_canvas_clear(_canvas);
         }
 
         public void DrawCircle(int x0, int y0, int radius, Color color)
         {
-            draw_circle(_canvas, x0, y0, radius, color.R, color.G, color.B);
+            int x = radius, y = 0;
+            int radiusError = 1 - x;
+
+            while (y <= x)
+            {
+                SetPixel(x + x0, y + y0, color);
+                SetPixel(y + x0, x + y0, color);
+                SetPixel(-x + x0, y + y0, color);
+                SetPixel(-y + x0, x + y0, color);
+                SetPixel(-x + x0, -y + y0, color);
+                SetPixel(-y + x0, -x + y0, color);
+                SetPixel(x + x0, -y + y0, color);
+                SetPixel(y + x0, -x + y0, color);
+                y++;
+                if (radiusError < 0)
+                {
+                    radiusError += 2 * y + 1;
+                }
+                else
+                {
+                    x--;
+                    radiusError += 2 * (y - x + 1);
+                }
+            }
         }
 
         public void DrawLine(int x0, int y0, int x1, int y1, Color color)
         {
-            draw_line(_canvas, x0, y0, x1, y1, color.R, color.G, color.B);
+            int dy = y1 - y0, dx = x1 - x0, gradient, x, y, shift = 0x10;
+
+            if (Math.Abs(dx) > Math.Abs(dy))
+            {
+                // x variation is bigger than y variation
+                if (x1 < x0)
+                {
+                    Swap(ref x0, ref x1);
+                    Swap(ref y0, ref y1);
+                }
+                gradient = (dy << shift) / dx;
+
+                for (x = x0, y = 0x8000 + (y0 << shift); x <= x1; ++x, y += gradient)
+                {
+                    SetPixel(x, y >> shift, color);
+                }
+            }
+            else if (dy != 0)
+            {
+                // y variation is bigger than x variation
+                if (y1 < y0)
+                {
+                    Swap(ref x0, ref x1);
+                    Swap(ref y0, ref y1);
+                }
+                gradient = (dx << shift) / dy;
+                for (y = y0, x = 0x8000 + (x0 << shift); y <= y1; ++y, x += gradient)
+                {
+                    SetPixel(x >> shift, y, color);
+                }
+            }
+            else
+            {
+                SetPixel(x0, y0, color);
+            }
+        }
+        static void Swap(ref int x, ref int y)
+        {
+
+            int tempswap = x;
+            x = y;
+            y = tempswap;
         }
 
         public int DrawText(RGBLedFont font, int x, int y, Color color, string text, int spacing = 0, bool vertical = false)

@@ -56,5 +56,16 @@ namespace LEDMatrix.Core.Canvas
         public IEnumerable<Pixel> Pixels => _pixels.Keys.Select(x => new Pixel(x.Item1, x.Item2, _pixels[x]));
         public int Width { get; private set; }
         public int Height { get; private set; }
+        public void Clear() => _pixels.Clear();
+        public void Fill(Color color)
+        {
+            for (int x = 0; x < Width; x++)
+            {
+                for (int y = 0; y < Height; y++)
+                {
+                    _pixels[(x, y)] = color;
+                }
+            }
+        }
     }
 }
