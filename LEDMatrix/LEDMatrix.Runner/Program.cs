@@ -14,6 +14,7 @@ using LEDMatrix.Core.Canvas.Drawing.Animations.Collections;
 using Newtonsoft.Json;
 using static LEDMatrix.Core.Constants.RMQ;
 using LEDMatrix.AssemblyHelper.Invocation;
+using System.Diagnostics;
 
 namespace LEDMatrix.Runner
 {
@@ -59,6 +60,7 @@ Console.WriteLine("Initialized Mock RGB LED matrix");
                     Console.WriteLine(str);
                     var message = JsonConvert.DeserializeObject<MethodInvocationDescriptor>(str);
                     message.InvokeOn(canvas);
+                    channel.BasicAck(eventArgs.DeliveryTag, false);
                     /*
                     var builder = new AnimationBuilder(canvas);
                     //Add animations
@@ -66,7 +68,8 @@ Console.WriteLine("Initialized Mock RGB LED matrix");
                     canvas.Clear();*/
                 };
                 Console.WriteLine($"Listening for queue messages on exchange {DEFAULT_EXCHANGE_NAME}, queue {DEFAULT_QUEUE_NAME}, key {ROUTING_KEY}...");
-                channel.BasicConsume(DEFAULT_QUEUE_NAME, true, consumer);
+                channel.BasicConsume(DEFAULT_QUEUE_NAME, false, consumer);
+                
                 while (true)
                 {
                     canvas = matrix.SwapOnVsync(canvas);
