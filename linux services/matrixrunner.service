@@ -7,9 +7,9 @@ StartLimitIntervalSec=0
 Type=simple
 Restart=always
 RestartSec=1
-User=pi
-WorkingDirectory=/root/rgb-led-matrix/LEDMatrix/LEDMatrix.Runner
-ExecStart=/usr/local/bin/dotnet run --project=LEDMatrix.Runner.csproj  --configuration=Release
+User=root
+WorkingDirectory=/root/rgb-led-matrix/LEDMatrix/LEDMatrix.Runner/bin/Release/net6.0
+ExecStart=/usr/local/bin/dotnet LEDMatrix.Runner.dll
 
 [Install]
 WantedBy=multi-user.target

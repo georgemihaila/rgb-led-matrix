@@ -8,8 +8,8 @@ Type=simple
 Restart=always
 RestartSec=1
 User=root
-WorkingDirectory=/root/rgb-led-matrix/LEDMatrix/LEDMatrix
-ExecStart=/usr/local/bin/dotnet run --project=LEDMatrix.Server.csproj --configuration=Release --urls=http://*:5050
+WorkingDirectory=/root/rgb-led-matrix/LEDMatrix/LEDMatrix/bin/Release/net6.0
+ExecStart=/usr/local/bin/dotnet LEDMatrix.Server.dll --urls=http://*:5050
 
 [Install]
 WantedBy=multi-user.target
