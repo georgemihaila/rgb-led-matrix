@@ -14,7 +14,7 @@ var subscriber = new QueueSubscriber(HOSTNAME, USERNAME, PASSWORD, DEFAULT_EXCHA
 var directInvocationSubscription = subscriber.CreateQueueSubscription(DIRECT_INVOCATION_QUEUE_NAME, ROUTING_KEY);
 directInvocationSubscription.CallbackException += (chann, args) =>
 {
-    Console.WriteLine(JsonConvert.SerializeObject(args));
+    Console.WriteLine(args.Exception.ToString());
 };
 var matrix =
 #if DEBUG
@@ -67,9 +67,5 @@ while (true)
     canvas = matrix.SwapOnVsync(canvas);
     canvas.Clear();
     animations.Update(canvas);
-    if (directInvocationSubscription.Channel.IsClosed)
-    {
-        throw new Exception("Channel closed");
-    }
     //matrix.Refresh(canvas);
 }

@@ -16,6 +16,7 @@ namespace LEDMatrix.Core.Canvas.Drawing.Remote.Subscription
             var consumer = new EventingBasicConsumer(channel);
             QueueSubscription result = new(consumer, channel);
             Console.WriteLine(channel.BasicConsume(queueName, false, consumer));
+            channel.DefaultConsumer = consumer;
             Console.WriteLine($"Listening for queue messages on exchange {_exchangeName}, queue {queueName}, key {routingKey}...");
             return result;
         }
