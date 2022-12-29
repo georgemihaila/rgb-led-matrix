@@ -18,12 +18,8 @@ builder.Services.AddSingleton<IRGBLEDCanvas, RMQVirtualRGBLEDCanvas>();
 builder.Services.AddSingleton(new AnimationFinder(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "LEDMatrix.Core.Canvas.Drawing.dll")));
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseAuthorization();
 
