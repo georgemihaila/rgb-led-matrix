@@ -9,5 +9,6 @@ namespace LEDMatrix.Core
         public TCanvas CreateOffscreenCanvas();
         public TCanvas GetCanvas();
         public TCanvas SwapOnVsync(TCanvas canvas);
+        public void Refresh(TCanvas canvas);
     }
 }

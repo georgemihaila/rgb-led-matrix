@@ -23,6 +23,11 @@ namespace LEDMatrix.Core.Matrix
             return _canvas;
         }
 
+        public void Refresh(MockRGBLEDCanvas canvas)
+        {
+
+        }
+
         public MockRGBLEDCanvas SwapOnVsync(MockRGBLEDCanvas canvas)
         {
             return _canvas;
