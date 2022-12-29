@@ -86,7 +86,6 @@ Console.WriteLine("Initialized Mock RGB LED matrix");
                     canvas.Clear();
                     animations.Update(canvas);
                     //matrix.Refresh(canvas);
-                    Thread.Sleep(10);
                 }
 
             }

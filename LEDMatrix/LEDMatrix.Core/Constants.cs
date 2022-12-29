@@ -11,14 +11,14 @@ namespace LEDMatrix.Core
         public static class RMQ
         {
             public const string DEFAULT_EXCHANGE_NAME =
-#if DEBUG
+#if RELEASE
                 "PanelExchange"
 #else
             "PanelReleaseExchange"
 #endif
             ;
             public const string DEFAULT_QUEUE_NAME =
-#if DEBUG
+#if RELEASE
                 "WebAPIQueue"
 #else
             "WebAPIReleaseQueue"
@@ -26,14 +26,20 @@ namespace LEDMatrix.Core
             ;
             public const string HOSTNAME = "10.10.0.241";
             public const string USERNAME =
-#if DEBUG
+#if RELEASE
                 "ledpanel"
 #else
             "ledpanelrelease"
 #endif
             ;
             public const string PASSWORD = "ledpanel";
-            public const string ROUTING_KEY = "";
+            public const string ROUTING_KEY =
+#if RELEASE
+                "WebAPIQueue"
+#else
+            "WebAPIReleaseQueue"
+#endif
+                ;
         }
     }
 }
