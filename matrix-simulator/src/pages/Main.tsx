@@ -12,19 +12,17 @@ function Main() {
         }
     }
     return <>
-        <Draggable>
+        <Draggable key={-1}>
             <div style={{ cursor: 'grabbing' }}>
                 <VirtualMatrixConfigurator {...virtualMatrixConfigured} />
             </div>
         </Draggable>
-        {matrices.map((config, i) => 
-        <>
-        <Draggable key={i}>
-            <div style={{ cursor: 'grabbing' }}>
-                <Matrix {...config} />
-            </div>
-        </Draggable>
-        </>)}
+        {matrices.map((config, i) =>
+            <Draggable key={i}>
+                <div style={{ cursor: 'grabbing' }}>
+                    <Matrix {...config} />
+                </div>
+            </Draggable>)}
     </>
 };
 

@@ -31,7 +31,7 @@ function VirtualMatrixConfigurator(callback: any) {
 
   return <>
     <Typography component="div" variant="body1">
-      <Box sx={{ maxWidth: width, backgroundColor: 'secondary.main', color: 'text.primary', padding: '5px' }}>
+      <Box sx={{ maxWidth: width, backgroundColor: 'primary.main', color: 'text.primary', padding: '5px' }}>
         <center>
           <b>Add virtual matrix</b>
         </center>
@@ -45,7 +45,7 @@ function VirtualMatrixConfigurator(callback: any) {
               value={matrixWidth.toString()}
               label="Width"
               onChange={handleMatrixWidthChange}>
-              {allowedValues.map(x => <MenuItem value={x} key={x}>{x}px</MenuItem>)}
+              {allowedValues.map((x, i) => <MenuItem value={x} key={i}>{x}px</MenuItem>)}
             </Select>
           </FormControl>
         </Box>
@@ -58,11 +58,11 @@ function VirtualMatrixConfigurator(callback: any) {
               value={matrixHeight.toString()}
               label="Height"
               onChange={handleMatrixHeightChange}>
-              {allowedValues.map(x => <MenuItem value={x} key={x}>{x}px</MenuItem>)}
+              {allowedValues.map((x, i) => <MenuItem value={x} key={i}>{x}px</MenuItem>)}
             </Select>
           </FormControl>
         </Box>
-        <Button sx={{ width: width, color: 'text.primary', backgroundColor: 'info.main' }} onClick={returnValue}>
+        <Button sx={{ width: width, color: 'text.primary', backgroundColor: 'secondary.main' }} onClick={returnValue}>
           Add
         </Button>
       </Box>
