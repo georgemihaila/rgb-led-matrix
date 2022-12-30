@@ -5,9 +5,10 @@ import VisualPixel from "./VisualPixel";
 function VisualPixelRow(pixels: Array<Pixel>) {
     const [pixelData, setPixelData] = useState(Object.keys(pixels).map(i => pixels[Number.parseInt(i)]));
     return <>
-        <div style={{ borderWidth: '10px', borderColor: 'white' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap' }}>
             {pixelData.map((x, i) => <VisualPixel key={i} {...x} />)}
         </div>
+        <br />
     </>
 }
 

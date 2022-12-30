@@ -9,7 +9,7 @@ export class VirtualCanvas {
         for (let x = 0; x < width; x++) {
             this.pixels[x] = [];
             for (let y = 0; y < height; y++) {
-                this.pixels[x][y] = new Pixel(new Vector2(x, y), new Color(0, 0, 0));
+                this.pixels[x][y] = new Pixel(new Vector2(x, y), Color.getRandom());
             }
         }
     }

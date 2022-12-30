@@ -3,14 +3,11 @@ import { Pixel } from "../models/Pixel";
 
 function VisualPixel(pixel: Pixel) {
     const [value, setValue] = useState(pixel);
-    useEffect(()=>{
+    useEffect(() => {
         setValue(pixel);
     });
-    return <>
-        {value.color.r}
-        {value.color.g}
-        {value.color.b}
-    </>
+    let size = 10;
+    return <div style={{ backgroundColor: `rgb(${value.color.r},${value.color.g},${value.color.b})`, width: `${size}px`, height: `${size}px`, display: 'flex', borderWidth: '0px', marginTop: -size, padding: 0 }} />
 }
 
 export default VisualPixel;

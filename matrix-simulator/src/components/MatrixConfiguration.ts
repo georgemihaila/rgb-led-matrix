@@ -1,5 +1,5 @@
 export class MatrixConfiguration{
-    constructor(public width: Number, public height: Number){
+    constructor(public width: number, public height: number){
         
     }
 }
