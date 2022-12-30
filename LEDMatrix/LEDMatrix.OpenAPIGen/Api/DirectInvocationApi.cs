@@ -14,10 +14,10 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net;
 using System.Net.Mime;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using LEDMatrix.Client.Client;
+using LEDMatrix.Client.Model;
 
-namespace Org.OpenAPITools.Api
+namespace LEDMatrix.Client.Api
 {
 
     /// <summary>
@@ -29,7 +29,7 @@ namespace Org.OpenAPITools.Api
         /// <summary>
         /// 
         /// </summary>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="x"> (optional)</param>
         /// <param name="y"> (optional)</param>
         /// <param name="color"> (optional)</param>
@@ -43,7 +43,7 @@ namespace Org.OpenAPITools.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="x"> (optional)</param>
         /// <param name="y"> (optional)</param>
         /// <param name="color"> (optional)</param>
@@ -53,7 +53,7 @@ namespace Org.OpenAPITools.Api
         /// <summary>
         /// 
         /// </summary>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
         void ApiDirectInvocationClearPost(int operationIndex = 0);
@@ -64,14 +64,14 @@ namespace Org.OpenAPITools.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> ApiDirectInvocationClearPostWithHttpInfo(int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="x0"> (optional)</param>
         /// <param name="y0"> (optional)</param>
         /// <param name="radius"> (optional)</param>
@@ -86,7 +86,7 @@ namespace Org.OpenAPITools.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="x0"> (optional)</param>
         /// <param name="y0"> (optional)</param>
         /// <param name="radius"> (optional)</param>
@@ -97,7 +97,7 @@ namespace Org.OpenAPITools.Api
         /// <summary>
         /// 
         /// </summary>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="x0"> (optional)</param>
         /// <param name="y0"> (optional)</param>
         /// <param name="x1"> (optional)</param>
@@ -113,7 +113,7 @@ namespace Org.OpenAPITools.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="x0"> (optional)</param>
         /// <param name="y0"> (optional)</param>
         /// <param name="x1"> (optional)</param>
@@ -125,7 +125,7 @@ namespace Org.OpenAPITools.Api
         /// <summary>
         /// 
         /// </summary>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fontName"> (optional)</param>
         /// <param name="x"> (optional)</param>
         /// <param name="y"> (optional)</param>
@@ -143,7 +143,7 @@ namespace Org.OpenAPITools.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fontName"> (optional)</param>
         /// <param name="x"> (optional)</param>
         /// <param name="y"> (optional)</param>
@@ -157,7 +157,7 @@ namespace Org.OpenAPITools.Api
         /// <summary>
         /// 
         /// </summary>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="color"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
@@ -169,7 +169,7 @@ namespace Org.OpenAPITools.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="color"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
@@ -177,7 +177,7 @@ namespace Org.OpenAPITools.Api
         /// <summary>
         /// 
         /// </summary>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Int32Vector2</returns>
         Int32Vector2 ApiDirectInvocationGetCanvasSizeGet(int operationIndex = 0);
@@ -188,14 +188,14 @@ namespace Org.OpenAPITools.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Int32Vector2</returns>
         ApiResponse<Int32Vector2> ApiDirectInvocationGetCanvasSizeGetWithHttpInfo(int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="x"> (optional)</param>
         /// <param name="y"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -208,7 +208,7 @@ namespace Org.OpenAPITools.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="x"> (optional)</param>
         /// <param name="y"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -217,7 +217,7 @@ namespace Org.OpenAPITools.Api
         /// <summary>
         /// 
         /// </summary>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pixel"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
@@ -229,7 +229,7 @@ namespace Org.OpenAPITools.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pixel"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
@@ -237,7 +237,7 @@ namespace Org.OpenAPITools.Api
         /// <summary>
         /// 
         /// </summary>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pixel"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
@@ -249,7 +249,7 @@ namespace Org.OpenAPITools.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pixel"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
@@ -269,7 +269,7 @@ namespace Org.OpenAPITools.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="x"> (optional)</param>
         /// <param name="y"> (optional)</param>
         /// <param name="color"> (optional)</param>
@@ -284,7 +284,7 @@ namespace Org.OpenAPITools.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="x"> (optional)</param>
         /// <param name="y"> (optional)</param>
         /// <param name="color"> (optional)</param>
@@ -298,7 +298,7 @@ namespace Org.OpenAPITools.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
@@ -310,7 +310,7 @@ namespace Org.OpenAPITools.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
@@ -321,7 +321,7 @@ namespace Org.OpenAPITools.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="x0"> (optional)</param>
         /// <param name="y0"> (optional)</param>
         /// <param name="radius"> (optional)</param>
@@ -337,7 +337,7 @@ namespace Org.OpenAPITools.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="x0"> (optional)</param>
         /// <param name="y0"> (optional)</param>
         /// <param name="radius"> (optional)</param>
@@ -352,7 +352,7 @@ namespace Org.OpenAPITools.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="x0"> (optional)</param>
         /// <param name="y0"> (optional)</param>
         /// <param name="x1"> (optional)</param>
@@ -369,7 +369,7 @@ namespace Org.OpenAPITools.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="x0"> (optional)</param>
         /// <param name="y0"> (optional)</param>
         /// <param name="x1"> (optional)</param>
@@ -385,7 +385,7 @@ namespace Org.OpenAPITools.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fontName"> (optional)</param>
         /// <param name="x"> (optional)</param>
         /// <param name="y"> (optional)</param>
@@ -404,7 +404,7 @@ namespace Org.OpenAPITools.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fontName"> (optional)</param>
         /// <param name="x"> (optional)</param>
         /// <param name="y"> (optional)</param>
@@ -422,7 +422,7 @@ namespace Org.OpenAPITools.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="color"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -435,7 +435,7 @@ namespace Org.OpenAPITools.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="color"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -447,7 +447,7 @@ namespace Org.OpenAPITools.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Int32Vector2</returns>
@@ -459,7 +459,7 @@ namespace Org.OpenAPITools.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Int32Vector2)</returns>
@@ -470,7 +470,7 @@ namespace Org.OpenAPITools.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="x"> (optional)</param>
         /// <param name="y"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -484,7 +484,7 @@ namespace Org.OpenAPITools.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="x"> (optional)</param>
         /// <param name="y"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -497,7 +497,7 @@ namespace Org.OpenAPITools.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pixel"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -510,7 +510,7 @@ namespace Org.OpenAPITools.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pixel"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -522,7 +522,7 @@ namespace Org.OpenAPITools.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pixel"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -535,7 +535,7 @@ namespace Org.OpenAPITools.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pixel"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -557,7 +557,7 @@ namespace Org.OpenAPITools.Api
     /// </summary>
     public partial class DirectInvocationApi : IDirectInvocationApi
     {
-        private Org.OpenAPITools.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private LEDMatrix.Client.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="DirectInvocationApi"/> class.
@@ -573,13 +573,13 @@ namespace Org.OpenAPITools.Api
         /// <returns></returns>
         public DirectInvocationApi(string basePath)
         {
-            this.Configuration = Org.OpenAPITools.Client.Configuration.MergeConfigurations(
-                Org.OpenAPITools.Client.GlobalConfiguration.Instance,
-                new Org.OpenAPITools.Client.Configuration { BasePath = basePath }
+            this.Configuration = LEDMatrix.Client.Client.Configuration.MergeConfigurations(
+                LEDMatrix.Client.Client.GlobalConfiguration.Instance,
+                new LEDMatrix.Client.Client.Configuration { BasePath = basePath }
             );
-            this.Client = new Org.OpenAPITools.Client.ApiClient(this.Configuration.BasePath);
-            this.AsynchronousClient = new Org.OpenAPITools.Client.ApiClient(this.Configuration.BasePath);
-            this.ExceptionFactory = Org.OpenAPITools.Client.Configuration.DefaultExceptionFactory;
+            this.Client = new LEDMatrix.Client.Client.ApiClient(this.Configuration.BasePath);
+            this.AsynchronousClient = new LEDMatrix.Client.Client.ApiClient(this.Configuration.BasePath);
+            this.ExceptionFactory = LEDMatrix.Client.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -588,17 +588,17 @@ namespace Org.OpenAPITools.Api
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public DirectInvocationApi(Org.OpenAPITools.Client.Configuration configuration)
+        public DirectInvocationApi(LEDMatrix.Client.Client.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
 
-            this.Configuration = Org.OpenAPITools.Client.Configuration.MergeConfigurations(
-                Org.OpenAPITools.Client.GlobalConfiguration.Instance,
+            this.Configuration = LEDMatrix.Client.Client.Configuration.MergeConfigurations(
+                LEDMatrix.Client.Client.GlobalConfiguration.Instance,
                 configuration
             );
-            this.Client = new Org.OpenAPITools.Client.ApiClient(this.Configuration.BasePath);
-            this.AsynchronousClient = new Org.OpenAPITools.Client.ApiClient(this.Configuration.BasePath);
-            ExceptionFactory = Org.OpenAPITools.Client.Configuration.DefaultExceptionFactory;
+            this.Client = new LEDMatrix.Client.Client.ApiClient(this.Configuration.BasePath);
+            this.AsynchronousClient = new LEDMatrix.Client.Client.ApiClient(this.Configuration.BasePath);
+            ExceptionFactory = LEDMatrix.Client.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -608,7 +608,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public DirectInvocationApi(Org.OpenAPITools.Client.ISynchronousClient client, Org.OpenAPITools.Client.IAsynchronousClient asyncClient, Org.OpenAPITools.Client.IReadableConfiguration configuration)
+        public DirectInvocationApi(LEDMatrix.Client.Client.ISynchronousClient client, LEDMatrix.Client.Client.IAsynchronousClient asyncClient, LEDMatrix.Client.Client.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");
@@ -617,18 +617,18 @@ namespace Org.OpenAPITools.Api
             this.Client = client;
             this.AsynchronousClient = asyncClient;
             this.Configuration = configuration;
-            this.ExceptionFactory = Org.OpenAPITools.Client.Configuration.DefaultExceptionFactory;
+            this.ExceptionFactory = LEDMatrix.Client.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
         /// The client for accessing this underlying API asynchronously.
         /// </summary>
-        public Org.OpenAPITools.Client.IAsynchronousClient AsynchronousClient { get; set; }
+        public LEDMatrix.Client.Client.IAsynchronousClient AsynchronousClient { get; set; }
 
         /// <summary>
         /// The client for accessing this underlying API synchronously.
         /// </summary>
-        public Org.OpenAPITools.Client.ISynchronousClient Client { get; set; }
+        public LEDMatrix.Client.Client.ISynchronousClient Client { get; set; }
 
         /// <summary>
         /// Gets the base path of the API client.
@@ -643,12 +643,12 @@ namespace Org.OpenAPITools.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Org.OpenAPITools.Client.IReadableConfiguration Configuration { get; set; }
+        public LEDMatrix.Client.Client.IReadableConfiguration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public Org.OpenAPITools.Client.ExceptionFactory ExceptionFactory
+        public LEDMatrix.Client.Client.ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -664,7 +664,7 @@ namespace Org.OpenAPITools.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="x"> (optional)</param>
         /// <param name="y"> (optional)</param>
         /// <param name="color"> (optional)</param>
@@ -678,15 +678,15 @@ namespace Org.OpenAPITools.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="x"> (optional)</param>
         /// <param name="y"> (optional)</param>
         /// <param name="color"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Org.OpenAPITools.Client.ApiResponse<Object> ApiDirectInvocationAddColorToPixelPostWithHttpInfo(int? x = default(int?), int? y = default(int?), Color color = default(Color), int operationIndex = 0)
+        public LEDMatrix.Client.Client.ApiResponse<Object> ApiDirectInvocationAddColorToPixelPostWithHttpInfo(int? x = default(int?), int? y = default(int?), Color color = default(Color), int operationIndex = 0)
         {
-            Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
+            LEDMatrix.Client.Client.RequestOptions localVarRequestOptions = new LEDMatrix.Client.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json",
@@ -698,13 +698,13 @@ namespace Org.OpenAPITools.Api
             string[] _accepts = new string[] {
             };
 
-            var localVarContentType = Org.OpenAPITools.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = LEDMatrix.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Org.OpenAPITools.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = LEDMatrix.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -712,11 +712,11 @@ namespace Org.OpenAPITools.Api
 
             if (x != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "x", x));
+                localVarRequestOptions.QueryParameters.Add(LEDMatrix.Client.Client.ClientUtils.ParameterToMultiMap("", "x", x));
             }
             if (y != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "y", y));
+                localVarRequestOptions.QueryParameters.Add(LEDMatrix.Client.Client.ClientUtils.ParameterToMultiMap("", "y", y));
             }
             localVarRequestOptions.Data = color;
 
@@ -741,7 +741,7 @@ namespace Org.OpenAPITools.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="x"> (optional)</param>
         /// <param name="y"> (optional)</param>
         /// <param name="color"> (optional)</param>
@@ -756,17 +756,17 @@ namespace Org.OpenAPITools.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="x"> (optional)</param>
         /// <param name="y"> (optional)</param>
         /// <param name="color"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<Object>> ApiDirectInvocationAddColorToPixelPostWithHttpInfoAsync(int? x = default(int?), int? y = default(int?), Color color = default(Color), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<LEDMatrix.Client.Client.ApiResponse<Object>> ApiDirectInvocationAddColorToPixelPostWithHttpInfoAsync(int? x = default(int?), int? y = default(int?), Color color = default(Color), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
+            LEDMatrix.Client.Client.RequestOptions localVarRequestOptions = new LEDMatrix.Client.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json", 
@@ -778,13 +778,13 @@ namespace Org.OpenAPITools.Api
             string[] _accepts = new string[] {
             };
 
-            var localVarContentType = Org.OpenAPITools.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = LEDMatrix.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Org.OpenAPITools.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = LEDMatrix.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -792,11 +792,11 @@ namespace Org.OpenAPITools.Api
 
             if (x != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "x", x));
+                localVarRequestOptions.QueryParameters.Add(LEDMatrix.Client.Client.ClientUtils.ParameterToMultiMap("", "x", x));
             }
             if (y != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "y", y));
+                localVarRequestOptions.QueryParameters.Add(LEDMatrix.Client.Client.ClientUtils.ParameterToMultiMap("", "y", y));
             }
             localVarRequestOptions.Data = color;
 
@@ -822,7 +822,7 @@ namespace Org.OpenAPITools.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
         public void ApiDirectInvocationClearPost(int operationIndex = 0)
@@ -833,12 +833,12 @@ namespace Org.OpenAPITools.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Org.OpenAPITools.Client.ApiResponse<Object> ApiDirectInvocationClearPostWithHttpInfo(int operationIndex = 0)
+        public LEDMatrix.Client.Client.ApiResponse<Object> ApiDirectInvocationClearPostWithHttpInfo(int operationIndex = 0)
         {
-            Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
+            LEDMatrix.Client.Client.RequestOptions localVarRequestOptions = new LEDMatrix.Client.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -847,13 +847,13 @@ namespace Org.OpenAPITools.Api
             string[] _accepts = new string[] {
             };
 
-            var localVarContentType = Org.OpenAPITools.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = LEDMatrix.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Org.OpenAPITools.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = LEDMatrix.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -881,7 +881,7 @@ namespace Org.OpenAPITools.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
@@ -893,14 +893,14 @@ namespace Org.OpenAPITools.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<Object>> ApiDirectInvocationClearPostWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<LEDMatrix.Client.Client.ApiResponse<Object>> ApiDirectInvocationClearPostWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
+            LEDMatrix.Client.Client.RequestOptions localVarRequestOptions = new LEDMatrix.Client.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -909,13 +909,13 @@ namespace Org.OpenAPITools.Api
             string[] _accepts = new string[] {
             };
 
-            var localVarContentType = Org.OpenAPITools.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = LEDMatrix.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Org.OpenAPITools.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = LEDMatrix.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -944,7 +944,7 @@ namespace Org.OpenAPITools.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="x0"> (optional)</param>
         /// <param name="y0"> (optional)</param>
         /// <param name="radius"> (optional)</param>
@@ -959,16 +959,16 @@ namespace Org.OpenAPITools.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="x0"> (optional)</param>
         /// <param name="y0"> (optional)</param>
         /// <param name="radius"> (optional)</param>
         /// <param name="color"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Org.OpenAPITools.Client.ApiResponse<Object> ApiDirectInvocationDrawCirclePostWithHttpInfo(int? x0 = default(int?), int? y0 = default(int?), int? radius = default(int?), Color color = default(Color), int operationIndex = 0)
+        public LEDMatrix.Client.Client.ApiResponse<Object> ApiDirectInvocationDrawCirclePostWithHttpInfo(int? x0 = default(int?), int? y0 = default(int?), int? radius = default(int?), Color color = default(Color), int operationIndex = 0)
         {
-            Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
+            LEDMatrix.Client.Client.RequestOptions localVarRequestOptions = new LEDMatrix.Client.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json",
@@ -980,13 +980,13 @@ namespace Org.OpenAPITools.Api
             string[] _accepts = new string[] {
             };
 
-            var localVarContentType = Org.OpenAPITools.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = LEDMatrix.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Org.OpenAPITools.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = LEDMatrix.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -994,15 +994,15 @@ namespace Org.OpenAPITools.Api
 
             if (x0 != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "x0", x0));
+                localVarRequestOptions.QueryParameters.Add(LEDMatrix.Client.Client.ClientUtils.ParameterToMultiMap("", "x0", x0));
             }
             if (y0 != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "y0", y0));
+                localVarRequestOptions.QueryParameters.Add(LEDMatrix.Client.Client.ClientUtils.ParameterToMultiMap("", "y0", y0));
             }
             if (radius != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "radius", radius));
+                localVarRequestOptions.QueryParameters.Add(LEDMatrix.Client.Client.ClientUtils.ParameterToMultiMap("", "radius", radius));
             }
             localVarRequestOptions.Data = color;
 
@@ -1027,7 +1027,7 @@ namespace Org.OpenAPITools.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="x0"> (optional)</param>
         /// <param name="y0"> (optional)</param>
         /// <param name="radius"> (optional)</param>
@@ -1043,7 +1043,7 @@ namespace Org.OpenAPITools.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="x0"> (optional)</param>
         /// <param name="y0"> (optional)</param>
         /// <param name="radius"> (optional)</param>
@@ -1051,10 +1051,10 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<Object>> ApiDirectInvocationDrawCirclePostWithHttpInfoAsync(int? x0 = default(int?), int? y0 = default(int?), int? radius = default(int?), Color color = default(Color), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<LEDMatrix.Client.Client.ApiResponse<Object>> ApiDirectInvocationDrawCirclePostWithHttpInfoAsync(int? x0 = default(int?), int? y0 = default(int?), int? radius = default(int?), Color color = default(Color), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
+            LEDMatrix.Client.Client.RequestOptions localVarRequestOptions = new LEDMatrix.Client.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json", 
@@ -1066,13 +1066,13 @@ namespace Org.OpenAPITools.Api
             string[] _accepts = new string[] {
             };
 
-            var localVarContentType = Org.OpenAPITools.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = LEDMatrix.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Org.OpenAPITools.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = LEDMatrix.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -1080,15 +1080,15 @@ namespace Org.OpenAPITools.Api
 
             if (x0 != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "x0", x0));
+                localVarRequestOptions.QueryParameters.Add(LEDMatrix.Client.Client.ClientUtils.ParameterToMultiMap("", "x0", x0));
             }
             if (y0 != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "y0", y0));
+                localVarRequestOptions.QueryParameters.Add(LEDMatrix.Client.Client.ClientUtils.ParameterToMultiMap("", "y0", y0));
             }
             if (radius != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "radius", radius));
+                localVarRequestOptions.QueryParameters.Add(LEDMatrix.Client.Client.ClientUtils.ParameterToMultiMap("", "radius", radius));
             }
             localVarRequestOptions.Data = color;
 
@@ -1114,7 +1114,7 @@ namespace Org.OpenAPITools.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="x0"> (optional)</param>
         /// <param name="y0"> (optional)</param>
         /// <param name="x1"> (optional)</param>
@@ -1130,7 +1130,7 @@ namespace Org.OpenAPITools.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="x0"> (optional)</param>
         /// <param name="y0"> (optional)</param>
         /// <param name="x1"> (optional)</param>
@@ -1138,9 +1138,9 @@ namespace Org.OpenAPITools.Api
         /// <param name="color"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Org.OpenAPITools.Client.ApiResponse<Object> ApiDirectInvocationDrawLinePostWithHttpInfo(int? x0 = default(int?), int? y0 = default(int?), int? x1 = default(int?), int? y1 = default(int?), Color color = default(Color), int operationIndex = 0)
+        public LEDMatrix.Client.Client.ApiResponse<Object> ApiDirectInvocationDrawLinePostWithHttpInfo(int? x0 = default(int?), int? y0 = default(int?), int? x1 = default(int?), int? y1 = default(int?), Color color = default(Color), int operationIndex = 0)
         {
-            Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
+            LEDMatrix.Client.Client.RequestOptions localVarRequestOptions = new LEDMatrix.Client.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json",
@@ -1152,13 +1152,13 @@ namespace Org.OpenAPITools.Api
             string[] _accepts = new string[] {
             };
 
-            var localVarContentType = Org.OpenAPITools.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = LEDMatrix.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Org.OpenAPITools.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = LEDMatrix.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -1166,19 +1166,19 @@ namespace Org.OpenAPITools.Api
 
             if (x0 != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "x0", x0));
+                localVarRequestOptions.QueryParameters.Add(LEDMatrix.Client.Client.ClientUtils.ParameterToMultiMap("", "x0", x0));
             }
             if (y0 != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "y0", y0));
+                localVarRequestOptions.QueryParameters.Add(LEDMatrix.Client.Client.ClientUtils.ParameterToMultiMap("", "y0", y0));
             }
             if (x1 != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "x1", x1));
+                localVarRequestOptions.QueryParameters.Add(LEDMatrix.Client.Client.ClientUtils.ParameterToMultiMap("", "x1", x1));
             }
             if (y1 != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "y1", y1));
+                localVarRequestOptions.QueryParameters.Add(LEDMatrix.Client.Client.ClientUtils.ParameterToMultiMap("", "y1", y1));
             }
             localVarRequestOptions.Data = color;
 
@@ -1203,7 +1203,7 @@ namespace Org.OpenAPITools.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="x0"> (optional)</param>
         /// <param name="y0"> (optional)</param>
         /// <param name="x1"> (optional)</param>
@@ -1220,7 +1220,7 @@ namespace Org.OpenAPITools.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="x0"> (optional)</param>
         /// <param name="y0"> (optional)</param>
         /// <param name="x1"> (optional)</param>
@@ -1229,10 +1229,10 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<Object>> ApiDirectInvocationDrawLinePostWithHttpInfoAsync(int? x0 = default(int?), int? y0 = default(int?), int? x1 = default(int?), int? y1 = default(int?), Color color = default(Color), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<LEDMatrix.Client.Client.ApiResponse<Object>> ApiDirectInvocationDrawLinePostWithHttpInfoAsync(int? x0 = default(int?), int? y0 = default(int?), int? x1 = default(int?), int? y1 = default(int?), Color color = default(Color), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
+            LEDMatrix.Client.Client.RequestOptions localVarRequestOptions = new LEDMatrix.Client.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json", 
@@ -1244,13 +1244,13 @@ namespace Org.OpenAPITools.Api
             string[] _accepts = new string[] {
             };
 
-            var localVarContentType = Org.OpenAPITools.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = LEDMatrix.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Org.OpenAPITools.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = LEDMatrix.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -1258,19 +1258,19 @@ namespace Org.OpenAPITools.Api
 
             if (x0 != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "x0", x0));
+                localVarRequestOptions.QueryParameters.Add(LEDMatrix.Client.Client.ClientUtils.ParameterToMultiMap("", "x0", x0));
             }
             if (y0 != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "y0", y0));
+                localVarRequestOptions.QueryParameters.Add(LEDMatrix.Client.Client.ClientUtils.ParameterToMultiMap("", "y0", y0));
             }
             if (x1 != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "x1", x1));
+                localVarRequestOptions.QueryParameters.Add(LEDMatrix.Client.Client.ClientUtils.ParameterToMultiMap("", "x1", x1));
             }
             if (y1 != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "y1", y1));
+                localVarRequestOptions.QueryParameters.Add(LEDMatrix.Client.Client.ClientUtils.ParameterToMultiMap("", "y1", y1));
             }
             localVarRequestOptions.Data = color;
 
@@ -1296,7 +1296,7 @@ namespace Org.OpenAPITools.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fontName"> (optional)</param>
         /// <param name="x"> (optional)</param>
         /// <param name="y"> (optional)</param>
@@ -1308,14 +1308,14 @@ namespace Org.OpenAPITools.Api
         /// <returns>int</returns>
         public int ApiDirectInvocationDrawTextPost(string fontName = default(string), int? x = default(int?), int? y = default(int?), string text = default(string), int? spacing = default(int?), bool? vertical = default(bool?), Color color = default(Color), int operationIndex = 0)
         {
-            Org.OpenAPITools.Client.ApiResponse<int> localVarResponse = ApiDirectInvocationDrawTextPostWithHttpInfo(fontName, x, y, text, spacing, vertical, color);
+            LEDMatrix.Client.Client.ApiResponse<int> localVarResponse = ApiDirectInvocationDrawTextPostWithHttpInfo(fontName, x, y, text, spacing, vertical, color);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fontName"> (optional)</param>
         /// <param name="x"> (optional)</param>
         /// <param name="y"> (optional)</param>
@@ -1325,9 +1325,9 @@ namespace Org.OpenAPITools.Api
         /// <param name="color"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of int</returns>
-        public Org.OpenAPITools.Client.ApiResponse<int> ApiDirectInvocationDrawTextPostWithHttpInfo(string fontName = default(string), int? x = default(int?), int? y = default(int?), string text = default(string), int? spacing = default(int?), bool? vertical = default(bool?), Color color = default(Color), int operationIndex = 0)
+        public LEDMatrix.Client.Client.ApiResponse<int> ApiDirectInvocationDrawTextPostWithHttpInfo(string fontName = default(string), int? x = default(int?), int? y = default(int?), string text = default(string), int? spacing = default(int?), bool? vertical = default(bool?), Color color = default(Color), int operationIndex = 0)
         {
-            Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
+            LEDMatrix.Client.Client.RequestOptions localVarRequestOptions = new LEDMatrix.Client.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json",
@@ -1342,13 +1342,13 @@ namespace Org.OpenAPITools.Api
                 "text/json"
             };
 
-            var localVarContentType = Org.OpenAPITools.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = LEDMatrix.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Org.OpenAPITools.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = LEDMatrix.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -1356,27 +1356,27 @@ namespace Org.OpenAPITools.Api
 
             if (fontName != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "fontName", fontName));
+                localVarRequestOptions.QueryParameters.Add(LEDMatrix.Client.Client.ClientUtils.ParameterToMultiMap("", "fontName", fontName));
             }
             if (x != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "x", x));
+                localVarRequestOptions.QueryParameters.Add(LEDMatrix.Client.Client.ClientUtils.ParameterToMultiMap("", "x", x));
             }
             if (y != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "y", y));
+                localVarRequestOptions.QueryParameters.Add(LEDMatrix.Client.Client.ClientUtils.ParameterToMultiMap("", "y", y));
             }
             if (text != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "text", text));
+                localVarRequestOptions.QueryParameters.Add(LEDMatrix.Client.Client.ClientUtils.ParameterToMultiMap("", "text", text));
             }
             if (spacing != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "spacing", spacing));
+                localVarRequestOptions.QueryParameters.Add(LEDMatrix.Client.Client.ClientUtils.ParameterToMultiMap("", "spacing", spacing));
             }
             if (vertical != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "vertical", vertical));
+                localVarRequestOptions.QueryParameters.Add(LEDMatrix.Client.Client.ClientUtils.ParameterToMultiMap("", "vertical", vertical));
             }
             localVarRequestOptions.Data = color;
 
@@ -1401,7 +1401,7 @@ namespace Org.OpenAPITools.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fontName"> (optional)</param>
         /// <param name="x"> (optional)</param>
         /// <param name="y"> (optional)</param>
@@ -1414,14 +1414,14 @@ namespace Org.OpenAPITools.Api
         /// <returns>Task of int</returns>
         public async System.Threading.Tasks.Task<int> ApiDirectInvocationDrawTextPostAsync(string fontName = default(string), int? x = default(int?), int? y = default(int?), string text = default(string), int? spacing = default(int?), bool? vertical = default(bool?), Color color = default(Color), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Org.OpenAPITools.Client.ApiResponse<int> localVarResponse = await ApiDirectInvocationDrawTextPostWithHttpInfoAsync(fontName, x, y, text, spacing, vertical, color, operationIndex, cancellationToken).ConfigureAwait(false);
+            LEDMatrix.Client.Client.ApiResponse<int> localVarResponse = await ApiDirectInvocationDrawTextPostWithHttpInfoAsync(fontName, x, y, text, spacing, vertical, color, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fontName"> (optional)</param>
         /// <param name="x"> (optional)</param>
         /// <param name="y"> (optional)</param>
@@ -1432,10 +1432,10 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (int)</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<int>> ApiDirectInvocationDrawTextPostWithHttpInfoAsync(string fontName = default(string), int? x = default(int?), int? y = default(int?), string text = default(string), int? spacing = default(int?), bool? vertical = default(bool?), Color color = default(Color), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<LEDMatrix.Client.Client.ApiResponse<int>> ApiDirectInvocationDrawTextPostWithHttpInfoAsync(string fontName = default(string), int? x = default(int?), int? y = default(int?), string text = default(string), int? spacing = default(int?), bool? vertical = default(bool?), Color color = default(Color), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
+            LEDMatrix.Client.Client.RequestOptions localVarRequestOptions = new LEDMatrix.Client.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json", 
@@ -1450,13 +1450,13 @@ namespace Org.OpenAPITools.Api
                 "text/json"
             };
 
-            var localVarContentType = Org.OpenAPITools.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = LEDMatrix.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Org.OpenAPITools.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = LEDMatrix.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -1464,27 +1464,27 @@ namespace Org.OpenAPITools.Api
 
             if (fontName != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "fontName", fontName));
+                localVarRequestOptions.QueryParameters.Add(LEDMatrix.Client.Client.ClientUtils.ParameterToMultiMap("", "fontName", fontName));
             }
             if (x != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "x", x));
+                localVarRequestOptions.QueryParameters.Add(LEDMatrix.Client.Client.ClientUtils.ParameterToMultiMap("", "x", x));
             }
             if (y != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "y", y));
+                localVarRequestOptions.QueryParameters.Add(LEDMatrix.Client.Client.ClientUtils.ParameterToMultiMap("", "y", y));
             }
             if (text != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "text", text));
+                localVarRequestOptions.QueryParameters.Add(LEDMatrix.Client.Client.ClientUtils.ParameterToMultiMap("", "text", text));
             }
             if (spacing != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "spacing", spacing));
+                localVarRequestOptions.QueryParameters.Add(LEDMatrix.Client.Client.ClientUtils.ParameterToMultiMap("", "spacing", spacing));
             }
             if (vertical != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "vertical", vertical));
+                localVarRequestOptions.QueryParameters.Add(LEDMatrix.Client.Client.ClientUtils.ParameterToMultiMap("", "vertical", vertical));
             }
             localVarRequestOptions.Data = color;
 
@@ -1510,7 +1510,7 @@ namespace Org.OpenAPITools.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="color"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
@@ -1522,13 +1522,13 @@ namespace Org.OpenAPITools.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="color"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Org.OpenAPITools.Client.ApiResponse<Object> ApiDirectInvocationFillPostWithHttpInfo(Color color = default(Color), int operationIndex = 0)
+        public LEDMatrix.Client.Client.ApiResponse<Object> ApiDirectInvocationFillPostWithHttpInfo(Color color = default(Color), int operationIndex = 0)
         {
-            Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
+            LEDMatrix.Client.Client.RequestOptions localVarRequestOptions = new LEDMatrix.Client.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json",
@@ -1540,13 +1540,13 @@ namespace Org.OpenAPITools.Api
             string[] _accepts = new string[] {
             };
 
-            var localVarContentType = Org.OpenAPITools.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = LEDMatrix.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Org.OpenAPITools.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = LEDMatrix.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -1575,7 +1575,7 @@ namespace Org.OpenAPITools.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="color"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -1588,15 +1588,15 @@ namespace Org.OpenAPITools.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="color"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<Object>> ApiDirectInvocationFillPostWithHttpInfoAsync(Color color = default(Color), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<LEDMatrix.Client.Client.ApiResponse<Object>> ApiDirectInvocationFillPostWithHttpInfoAsync(Color color = default(Color), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
+            LEDMatrix.Client.Client.RequestOptions localVarRequestOptions = new LEDMatrix.Client.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json", 
@@ -1608,13 +1608,13 @@ namespace Org.OpenAPITools.Api
             string[] _accepts = new string[] {
             };
 
-            var localVarContentType = Org.OpenAPITools.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = LEDMatrix.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Org.OpenAPITools.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = LEDMatrix.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -1644,24 +1644,24 @@ namespace Org.OpenAPITools.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Int32Vector2</returns>
         public Int32Vector2 ApiDirectInvocationGetCanvasSizeGet(int operationIndex = 0)
         {
-            Org.OpenAPITools.Client.ApiResponse<Int32Vector2> localVarResponse = ApiDirectInvocationGetCanvasSizeGetWithHttpInfo();
+            LEDMatrix.Client.Client.ApiResponse<Int32Vector2> localVarResponse = ApiDirectInvocationGetCanvasSizeGetWithHttpInfo();
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Int32Vector2</returns>
-        public Org.OpenAPITools.Client.ApiResponse<Int32Vector2> ApiDirectInvocationGetCanvasSizeGetWithHttpInfo(int operationIndex = 0)
+        public LEDMatrix.Client.Client.ApiResponse<Int32Vector2> ApiDirectInvocationGetCanvasSizeGetWithHttpInfo(int operationIndex = 0)
         {
-            Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
+            LEDMatrix.Client.Client.RequestOptions localVarRequestOptions = new LEDMatrix.Client.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1673,13 +1673,13 @@ namespace Org.OpenAPITools.Api
                 "text/json"
             };
 
-            var localVarContentType = Org.OpenAPITools.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = LEDMatrix.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Org.OpenAPITools.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = LEDMatrix.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -1707,27 +1707,27 @@ namespace Org.OpenAPITools.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Int32Vector2</returns>
         public async System.Threading.Tasks.Task<Int32Vector2> ApiDirectInvocationGetCanvasSizeGetAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Org.OpenAPITools.Client.ApiResponse<Int32Vector2> localVarResponse = await ApiDirectInvocationGetCanvasSizeGetWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
+            LEDMatrix.Client.Client.ApiResponse<Int32Vector2> localVarResponse = await ApiDirectInvocationGetCanvasSizeGetWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Int32Vector2)</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<Int32Vector2>> ApiDirectInvocationGetCanvasSizeGetWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<LEDMatrix.Client.Client.ApiResponse<Int32Vector2>> ApiDirectInvocationGetCanvasSizeGetWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
+            LEDMatrix.Client.Client.RequestOptions localVarRequestOptions = new LEDMatrix.Client.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1739,13 +1739,13 @@ namespace Org.OpenAPITools.Api
                 "text/json"
             };
 
-            var localVarContentType = Org.OpenAPITools.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = LEDMatrix.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Org.OpenAPITools.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = LEDMatrix.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -1774,28 +1774,28 @@ namespace Org.OpenAPITools.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="x"> (optional)</param>
         /// <param name="y"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Pixel</returns>
         public Pixel ApiDirectInvocationGetPixelGet(int? x = default(int?), int? y = default(int?), int operationIndex = 0)
         {
-            Org.OpenAPITools.Client.ApiResponse<Pixel> localVarResponse = ApiDirectInvocationGetPixelGetWithHttpInfo(x, y);
+            LEDMatrix.Client.Client.ApiResponse<Pixel> localVarResponse = ApiDirectInvocationGetPixelGetWithHttpInfo(x, y);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="x"> (optional)</param>
         /// <param name="y"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Pixel</returns>
-        public Org.OpenAPITools.Client.ApiResponse<Pixel> ApiDirectInvocationGetPixelGetWithHttpInfo(int? x = default(int?), int? y = default(int?), int operationIndex = 0)
+        public LEDMatrix.Client.Client.ApiResponse<Pixel> ApiDirectInvocationGetPixelGetWithHttpInfo(int? x = default(int?), int? y = default(int?), int operationIndex = 0)
         {
-            Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
+            LEDMatrix.Client.Client.RequestOptions localVarRequestOptions = new LEDMatrix.Client.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1807,13 +1807,13 @@ namespace Org.OpenAPITools.Api
                 "text/json"
             };
 
-            var localVarContentType = Org.OpenAPITools.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = LEDMatrix.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Org.OpenAPITools.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = LEDMatrix.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -1821,11 +1821,11 @@ namespace Org.OpenAPITools.Api
 
             if (x != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "x", x));
+                localVarRequestOptions.QueryParameters.Add(LEDMatrix.Client.Client.ClientUtils.ParameterToMultiMap("", "x", x));
             }
             if (y != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "y", y));
+                localVarRequestOptions.QueryParameters.Add(LEDMatrix.Client.Client.ClientUtils.ParameterToMultiMap("", "y", y));
             }
 
             localVarRequestOptions.Operation = "DirectInvocationApi.ApiDirectInvocationGetPixelGet";
@@ -1849,7 +1849,7 @@ namespace Org.OpenAPITools.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="x"> (optional)</param>
         /// <param name="y"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -1857,23 +1857,23 @@ namespace Org.OpenAPITools.Api
         /// <returns>Task of Pixel</returns>
         public async System.Threading.Tasks.Task<Pixel> ApiDirectInvocationGetPixelGetAsync(int? x = default(int?), int? y = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Org.OpenAPITools.Client.ApiResponse<Pixel> localVarResponse = await ApiDirectInvocationGetPixelGetWithHttpInfoAsync(x, y, operationIndex, cancellationToken).ConfigureAwait(false);
+            LEDMatrix.Client.Client.ApiResponse<Pixel> localVarResponse = await ApiDirectInvocationGetPixelGetWithHttpInfoAsync(x, y, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="x"> (optional)</param>
         /// <param name="y"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Pixel)</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<Pixel>> ApiDirectInvocationGetPixelGetWithHttpInfoAsync(int? x = default(int?), int? y = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<LEDMatrix.Client.Client.ApiResponse<Pixel>> ApiDirectInvocationGetPixelGetWithHttpInfoAsync(int? x = default(int?), int? y = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
+            LEDMatrix.Client.Client.RequestOptions localVarRequestOptions = new LEDMatrix.Client.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
             };
@@ -1885,13 +1885,13 @@ namespace Org.OpenAPITools.Api
                 "text/json"
             };
 
-            var localVarContentType = Org.OpenAPITools.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = LEDMatrix.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Org.OpenAPITools.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = LEDMatrix.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -1899,11 +1899,11 @@ namespace Org.OpenAPITools.Api
 
             if (x != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "x", x));
+                localVarRequestOptions.QueryParameters.Add(LEDMatrix.Client.Client.ClientUtils.ParameterToMultiMap("", "x", x));
             }
             if (y != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "y", y));
+                localVarRequestOptions.QueryParameters.Add(LEDMatrix.Client.Client.ClientUtils.ParameterToMultiMap("", "y", y));
             }
 
             localVarRequestOptions.Operation = "DirectInvocationApi.ApiDirectInvocationGetPixelGet";
@@ -1928,7 +1928,7 @@ namespace Org.OpenAPITools.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pixel"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
@@ -1940,13 +1940,13 @@ namespace Org.OpenAPITools.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pixel"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Org.OpenAPITools.Client.ApiResponse<Object> ApiDirectInvocationSetPixelPostWithHttpInfo(Pixel pixel = default(Pixel), int operationIndex = 0)
+        public LEDMatrix.Client.Client.ApiResponse<Object> ApiDirectInvocationSetPixelPostWithHttpInfo(Pixel pixel = default(Pixel), int operationIndex = 0)
         {
-            Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
+            LEDMatrix.Client.Client.RequestOptions localVarRequestOptions = new LEDMatrix.Client.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json",
@@ -1958,13 +1958,13 @@ namespace Org.OpenAPITools.Api
             string[] _accepts = new string[] {
             };
 
-            var localVarContentType = Org.OpenAPITools.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = LEDMatrix.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Org.OpenAPITools.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = LEDMatrix.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -1993,7 +1993,7 @@ namespace Org.OpenAPITools.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pixel"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -2006,15 +2006,15 @@ namespace Org.OpenAPITools.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pixel"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<Object>> ApiDirectInvocationSetPixelPostWithHttpInfoAsync(Pixel pixel = default(Pixel), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<LEDMatrix.Client.Client.ApiResponse<Object>> ApiDirectInvocationSetPixelPostWithHttpInfoAsync(Pixel pixel = default(Pixel), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
+            LEDMatrix.Client.Client.RequestOptions localVarRequestOptions = new LEDMatrix.Client.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json", 
@@ -2026,13 +2026,13 @@ namespace Org.OpenAPITools.Api
             string[] _accepts = new string[] {
             };
 
-            var localVarContentType = Org.OpenAPITools.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = LEDMatrix.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Org.OpenAPITools.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = LEDMatrix.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -2062,7 +2062,7 @@ namespace Org.OpenAPITools.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pixel"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
@@ -2074,13 +2074,13 @@ namespace Org.OpenAPITools.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pixel"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Org.OpenAPITools.Client.ApiResponse<Object> ApiDirectInvocationSetPixelsPostWithHttpInfo(List<Pixel> pixel = default(List<Pixel>), int operationIndex = 0)
+        public LEDMatrix.Client.Client.ApiResponse<Object> ApiDirectInvocationSetPixelsPostWithHttpInfo(List<Pixel> pixel = default(List<Pixel>), int operationIndex = 0)
         {
-            Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
+            LEDMatrix.Client.Client.RequestOptions localVarRequestOptions = new LEDMatrix.Client.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json",
@@ -2092,13 +2092,13 @@ namespace Org.OpenAPITools.Api
             string[] _accepts = new string[] {
             };
 
-            var localVarContentType = Org.OpenAPITools.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = LEDMatrix.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Org.OpenAPITools.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = LEDMatrix.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -2127,7 +2127,7 @@ namespace Org.OpenAPITools.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pixel"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -2140,15 +2140,15 @@ namespace Org.OpenAPITools.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="LEDMatrix.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pixel"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<Object>> ApiDirectInvocationSetPixelsPostWithHttpInfoAsync(List<Pixel> pixel = default(List<Pixel>), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<LEDMatrix.Client.Client.ApiResponse<Object>> ApiDirectInvocationSetPixelsPostWithHttpInfoAsync(List<Pixel> pixel = default(List<Pixel>), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
+            LEDMatrix.Client.Client.RequestOptions localVarRequestOptions = new LEDMatrix.Client.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json", 
@@ -2160,13 +2160,13 @@ namespace Org.OpenAPITools.Api
             string[] _accepts = new string[] {
             };
 
-            var localVarContentType = Org.OpenAPITools.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = LEDMatrix.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = Org.OpenAPITools.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = LEDMatrix.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);

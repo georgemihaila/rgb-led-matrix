@@ -21,9 +21,9 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
-using OpenAPIDateConverter = Org.OpenAPITools.Client.OpenAPIDateConverter;
+using OpenAPIDateConverter = LEDMatrix.Client.Client.OpenAPIDateConverter;
 
-namespace Org.OpenAPITools.Model
+namespace LEDMatrix.Client.Model
 {
     /// <summary>
     /// Int32Vector2

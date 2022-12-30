@@ -29,7 +29,7 @@ using RestSharp.Serializers;
 using RestSharpMethod = RestSharp.Method;
 using Polly;
 
-namespace Org.OpenAPITools.Client
+namespace LEDMatrix.Client.Client
 {
     /// <summary>
     /// Allows RestSharp to Serialize/Deserialize JSON using our custom logic, but only when ContentType is JSON.
@@ -69,10 +69,10 @@ namespace Org.OpenAPITools.Client
         /// <returns>A JSON string.</returns>
         public string Serialize(object obj)
         {
-            if (obj != null && obj is Org.OpenAPITools.Model.AbstractOpenAPISchema)
+            if (obj != null && obj is LEDMatrix.Client.Model.AbstractOpenAPISchema)
             {
                 // the object to be serialized is an oneOf/anyOf schema
-                return ((Org.OpenAPITools.Model.AbstractOpenAPISchema)obj).ToJson();
+                return ((LEDMatrix.Client.Model.AbstractOpenAPISchema)obj).ToJson();
             }
             else
             {
@@ -207,7 +207,7 @@ namespace Org.OpenAPITools.Client
         /// </summary>
         public ApiClient()
         {
-            _baseUrl = Org.OpenAPITools.Client.GlobalConfiguration.Instance.BasePath;
+            _baseUrl = LEDMatrix.Client.Client.GlobalConfiguration.Instance.BasePath;
         }
 
         /// <summary>
@@ -478,7 +478,7 @@ namespace Org.OpenAPITools.Client
             }
 
             // if the response type is oneOf/anyOf, call FromJSON to deserialize the data
-            if (typeof(Org.OpenAPITools.Model.AbstractOpenAPISchema).IsAssignableFrom(typeof(T)))
+            if (typeof(LEDMatrix.Client.Model.AbstractOpenAPISchema).IsAssignableFrom(typeof(T)))
             {
                 try
                 {
@@ -573,7 +573,7 @@ namespace Org.OpenAPITools.Client
             }
 
             // if the response type is oneOf/anyOf, call FromJSON to deserialize the data
-            if (typeof(Org.OpenAPITools.Model.AbstractOpenAPISchema).IsAssignableFrom(typeof(T)))
+            if (typeof(LEDMatrix.Client.Model.AbstractOpenAPISchema).IsAssignableFrom(typeof(T)))
             {
                 response.Data = (T) typeof(T).GetMethod("FromJson").Invoke(null, new object[] { response.Content });
             }

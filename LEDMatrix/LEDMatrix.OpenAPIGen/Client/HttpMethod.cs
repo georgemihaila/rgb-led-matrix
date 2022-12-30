@@ -8,7 +8,7 @@
  */
 
 
-namespace Org.OpenAPITools.Client
+namespace LEDMatrix.Client.Client
 {
     /// <summary>
     /// Http methods supported by swagger

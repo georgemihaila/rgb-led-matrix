@@ -38,6 +38,9 @@ namespace LEDMatrix.Core.Canvas
         {
             get
             {
+                if (IsOutsideRange(x, y))
+                    return _defaultColorFunc();
+
                 if (!_pixels.ContainsKey((x, y)))
                 {
                     _pixels.Add((x, y), _defaultColorFunc());
@@ -46,6 +49,9 @@ namespace LEDMatrix.Core.Canvas
             }
             set
             {
+                if (IsOutsideRange(x, y))
+                    return;
+
                 if (!_pixels.ContainsKey((x, y)))
                 {
                     _pixels.Add((x, y), value);
@@ -67,5 +73,6 @@ namespace LEDMatrix.Core.Canvas
                 }
             }
         }
+        private bool IsOutsideRange(int x, int y) => (x < 0 || y < 0) || (x > Width || y > Height);
     }
 }

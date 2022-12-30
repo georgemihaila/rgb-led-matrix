@@ -10,7 +10,7 @@
 
 using System;
 
-namespace Org.OpenAPITools.Client
+namespace LEDMatrix.Client.Client
 {
     /// <summary>
     /// A delegate to ExceptionFactory method

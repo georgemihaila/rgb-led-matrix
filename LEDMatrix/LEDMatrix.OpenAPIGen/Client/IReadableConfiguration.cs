@@ -13,7 +13,7 @@ using System.Collections.Generic;
 using System.Net;
 using System.Security.Cryptography.X509Certificates;
 
-namespace Org.OpenAPITools.Client
+namespace LEDMatrix.Client.Client
 {
     /// <summary>
     /// Represents a readable-only configuration contract.

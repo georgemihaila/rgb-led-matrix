@@ -11,7 +11,7 @@
 using Polly;
 using RestSharp;
 
-namespace Org.OpenAPITools.Client
+namespace LEDMatrix.Client.Client
 {
     /// <summary>
     /// Configuration class to set the polly retry policies to be applied to the requests.

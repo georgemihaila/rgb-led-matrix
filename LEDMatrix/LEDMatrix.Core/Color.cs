@@ -55,7 +55,9 @@ namespace LEDMatrix.Core
         public static bool operator !=(Color a, Color b) => a.R != b.R || a.G != b.G || a.B != b.B;
         public override string ToString() => $"R: {R} G: {G} B: {B}";
 
+#pragma warning disable CS8765 // Nullability of type of parameter doesn't match overridden member (possibly because of nullability attributes).
         public override bool Equals(object obj)
+#pragma warning restore CS8765 // Nullability of type of parameter doesn't match overridden member (possibly because of nullability attributes).
         {
             if (ReferenceEquals(this, obj))
             {

@@ -53,7 +53,13 @@ namespace LEDMatrix.Controllers
         [HttpPost]
         public int DrawText(string fontName, int x, int y, Color color, string text, int spacing = 0, bool vertical = false)
         {
-            return _canvas.DrawText(new(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), fontName)), x, y, color, text, spacing, vertical);
+            if (string.IsNullOrWhiteSpace(fontName))
+                throw new ArgumentNullException(nameof(fontName));
+            var directory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            if (string.IsNullOrWhiteSpace(directory))
+                throw new Exception("Directory null");
+
+            return _canvas.DrawText(new(Path.Combine(directory, fontName)), x, y, color, text, spacing, vertical);
         }
         [HttpPost]
         public void Fill(Color color)

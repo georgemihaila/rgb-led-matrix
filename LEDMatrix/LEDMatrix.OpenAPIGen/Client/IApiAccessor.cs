@@ -10,7 +10,7 @@
 
 using System;
 
-namespace Org.OpenAPITools.Client
+namespace LEDMatrix.Client.Client
 {
     /// <summary>
     /// Represents configuration aspects required to interact with the API endpoints.

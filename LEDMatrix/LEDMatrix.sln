@@ -19,7 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LEDMatrix.Core.Canvas.Drawi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LEDMatrix.AssemblyHelper", "LEDMatrix.AssemblyHelper\LEDMatrix.AssemblyHelper.csproj", "{E417FC2B-6198-4032-B5EA-F2F6E398E515}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LEDMatrix.OpenAPIGen", "LEDMatrix.OpenAPIGen\LEDMatrix.OpenAPIGen.csproj", "{2215C60D-8556-41B2-BB79-98C4923DE1A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LEDMatrix.Client", "LEDMatrix.OpenAPIGen\LEDMatrix.Client.csproj", "{2215C60D-8556-41B2-BB79-98C4923DE1A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LEDMatrix.Demo", "LEDMatrix.Demo\LEDMatrix.Demo.csproj", "{937CC161-44D5-4AE1-A7A3-1FB280E7446F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,6 +61,10 @@ Global
 		{2215C60D-8556-41B2-BB79-98C4923DE1A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2215C60D-8556-41B2-BB79-98C4923DE1A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2215C60D-8556-41B2-BB79-98C4923DE1A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{937CC161-44D5-4AE1-A7A3-1FB280E7446F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{937CC161-44D5-4AE1-A7A3-1FB280E7446F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{937CC161-44D5-4AE1-A7A3-1FB280E7446F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{937CC161-44D5-4AE1-A7A3-1FB280E7446F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

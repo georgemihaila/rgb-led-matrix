@@ -11,7 +11,7 @@
 using System;
 using System.Threading.Tasks;
 
-namespace Org.OpenAPITools.Client
+namespace LEDMatrix.Client.Client
 {
     /// <summary>
     /// Contract for Asynchronous RESTful API interactions.

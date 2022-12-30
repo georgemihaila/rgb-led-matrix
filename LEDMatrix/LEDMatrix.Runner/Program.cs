@@ -6,20 +6,22 @@ using Newtonsoft.Json;
 using static LEDMatrix.Core.Constants.RMQ;
 using LEDMatrix.AssemblyHelper.Invocation;
 using LEDMatrix.Core.Canvas.Drawing.Remote.Subscription;
+using LEDMatrix.Core.Logging;
 #if RELEASE
 using LEDMatrix.Core.Canvas.Drawing.Options;
 #endif
 
+ILogger logger = new ConsoleLogger();
 var subscriber = new QueueSubscriber(HOSTNAME, USERNAME, PASSWORD, DEFAULT_EXCHANGE_NAME);
 var directInvocationSubscription = subscriber.CreateQueueSubscription(DIRECT_INVOCATION_QUEUE_NAME, ROUTING_KEY);
 directInvocationSubscription.CallbackException += (chann, args) =>
 {
-    Console.WriteLine(args.Exception.ToString());
+    logger.Error(args.Exception.ToString());
 };
 var matrix =
 #if DEBUG
 new MockRGBLEDMatrix();
-Console.WriteLine("Initialized Mock RGB LED matrix");
+logger.Debug("Initialized Mock RGB LED matrix");
 #else
                 new RGBLedMatrix(new RGBLedMatrixOptions()
                 {
@@ -36,7 +38,7 @@ Console.WriteLine("Initialized Mock RGB LED matrix");
 #endif
 var canvas = matrix.GetCanvas();
 canvas.Clear();
-Console.WriteLine($"Initialized RGB LED matrix with size {canvas.Width}x{canvas.Height}");
+logger.Debug($"Initialized RGB LED matrix with size {canvas.Width}x{canvas.Height}");
 var animations = new ParallelAggregatedAnimation(true);
 directInvocationSubscription.MessageReceived += (model, eventArgs) =>
 {
@@ -44,18 +46,13 @@ directInvocationSubscription.MessageReceived += (model, eventArgs) =>
     {
         var body = eventArgs.Body.ToArray();
         var str = Encoding.UTF8.GetString(body);
-        Console.WriteLine(str);
+        logger.Info(str);
         var message = JsonConvert.DeserializeObject<MethodInvocationDescriptor>(str);
         message.InvokeOn(canvas);
-        /*
-        var builder = new AnimationBuilder(canvas);
-        //Add animations
-        animations.Play();
-        canvas.Clear();*/
     }
     catch (Exception e)
     {
-        Console.WriteLine(e);
+        logger.Error(e);
     }
     finally
     {
@@ -65,7 +62,6 @@ directInvocationSubscription.MessageReceived += (model, eventArgs) =>
 while (true)
 {
     canvas = matrix.SwapOnVsync(canvas);
-    //canvas.Clear();
     animations.Update(canvas);
     matrix.Refresh(canvas);
 }
