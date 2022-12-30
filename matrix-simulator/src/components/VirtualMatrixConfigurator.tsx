@@ -4,19 +4,27 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
-import { Typography } from '@mui/material';
+import { Button, Typography } from '@mui/material';
+import { MatrixConfiguration } from './MatrixConfiguration';
+import { ReactNode } from 'react';
 
-function VirtualMatrixConfigurator() {
-  const [matrixWidth, setMatrixWidth] = React.useState('64');
-  const handleMatrixWidthChange = (event: SelectChangeEvent) => {
-    setMatrixWidth(event.target.value as string);
+function VirtualMatrixConfigurator(callback: any) {
+  const [matrixWidth, setMatrixWidth] = React.useState(64);
+  const handleMatrixWidthChange = (event: SelectChangeEvent, child: ReactNode) => {
+    setMatrixWidth(Number.parseInt(event.target.value));
   };
 
-  const [matrixHeight, setMatrixHeight] = React.useState('64');
-  const handleMatrixHeightChange = (event: SelectChangeEvent) => {
-    setMatrixHeight(event.target.value as string);
+  const [matrixHeight, setMatrixHeight] = React.useState(64);
+  const handleMatrixHeightChange = (event: SelectChangeEvent, child: ReactNode) => {
+    setMatrixHeight(Number.parseInt(event.target.value));
   };
 
+  const [virtualMatrix, setVirtualMatrix] = React.useState(new MatrixConfiguration(64, 64));
+
+  const returnValue = () => {
+    setVirtualMatrix(() => new MatrixConfiguration(matrixWidth, matrixHeight));
+    callback.callback(virtualMatrix);
+  };
   const allowedValues = [16, 32, 64, 128, 256];
 
   const width = 250;
@@ -25,7 +33,7 @@ function VirtualMatrixConfigurator() {
     <Typography component="div" variant="body1">
       <Box sx={{ maxWidth: width, backgroundColor: 'secondary.main', color: 'text.primary', padding: '5px' }}>
         <center>
-          <b>Configure virtual matrix</b>
+          <b>Add virtual matrix</b>
         </center>
         <br />
         <Box sx={{ maxWidth: width }}>
@@ -34,10 +42,10 @@ function VirtualMatrixConfigurator() {
             <Select
               labelId="width-label"
               id="matrix-width-select"
-              value={matrixWidth}
+              value={matrixWidth.toString()}
               label="Width"
               onChange={handleMatrixWidthChange}>
-              {allowedValues.map(x => <MenuItem value={x}>{x}px</MenuItem>)}
+              {allowedValues.map(x => <MenuItem value={x} key={x}>{x}px</MenuItem>)}
             </Select>
           </FormControl>
         </Box>
@@ -47,13 +55,16 @@ function VirtualMatrixConfigurator() {
             <Select
               labelId="height-label"
               id="matrix-height-select"
-              value={matrixHeight}
+              value={matrixHeight.toString()}
               label="Height"
               onChange={handleMatrixHeightChange}>
-              {allowedValues.map(x => <MenuItem value={x}>{x}px</MenuItem>)}
+              {allowedValues.map(x => <MenuItem value={x} key={x}>{x}px</MenuItem>)}
             </Select>
           </FormControl>
         </Box>
+        <Button sx={{ width: width, color: 'text.primary', backgroundColor: 'info.main' }} onClick={returnValue}>
+          Add
+        </Button>
       </Box>
     </Typography>
   </>
