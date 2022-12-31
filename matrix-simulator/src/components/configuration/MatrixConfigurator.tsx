@@ -5,10 +5,12 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import { Button, Typography } from '@mui/material';
-import { MatrixConfiguration } from './MatrixConfiguration';
+import { VirtualMatrixConfiguration } from './VirtualMatrixConfiguration';
 import { ReactNode } from 'react';
+import { addVirtualMatrixDialogWidth, defaultPaddingSize } from '../../infra/constants';
+import { ConfigurationCallbackModel } from './ConfigurationCallbackModel';
 
-function VirtualMatrixConfigurator(callback: any) {
+function MatrixConfigurator(callbackModel: ConfigurationCallbackModel) {
   const [matrixWidth, setMatrixWidth] = React.useState(64);
   const handleMatrixWidthChange = (event: SelectChangeEvent, child: ReactNode) => {
     setMatrixWidth(Number.parseInt(event.target.value));
@@ -19,29 +21,25 @@ function VirtualMatrixConfigurator(callback: any) {
     setMatrixHeight(Number.parseInt(event.target.value));
   };
 
-  const [virtualMatrix, setVirtualMatrix] = React.useState(new MatrixConfiguration(64, 64));
+  const [virtualMatrix, setVirtualMatrix] = React.useState(new VirtualMatrixConfiguration(128, 128));
 
   const returnValue = () => {
-    setVirtualMatrix(() => new MatrixConfiguration(matrixWidth, matrixHeight));
-    callback.callback(virtualMatrix);
+    let value = new VirtualMatrixConfiguration(matrixWidth, matrixHeight);
+    setVirtualMatrix(() => value);
+    callbackModel.virtualMatrixConfiguredCallback(value);
   };
   const allowedValues = [16, 32, 64, 128, 256];
 
-  const width = 250;
-
   return <>
     <Typography component="div" variant="body1">
-      <Box sx={{ maxWidth: width, backgroundColor: 'primary.main', color: 'text.primary', padding: '5px' }}>
-        <center>
-          <b>Add virtual matrix</b>
-        </center>
+      <Box sx={{ maxWidth: addVirtualMatrixDialogWidth, color: 'text.primary', padding: '5px' }}>
         <br />
-        <Box sx={{ maxWidth: width }}>
+        <Box sx={{ maxWidth: addVirtualMatrixDialogWidth }}>
           <FormControl fullWidth>
-            <InputLabel id="width-label" sx={{ color: 'text.primary' }}>Width</InputLabel>
+            <InputLabel id="addVirtualMatrixDialogWidth-label" sx={{ color: 'text.primary' }}>Width</InputLabel>
             <Select
-              labelId="width-label"
-              id="matrix-width-select"
+              labelId="addVirtualMatrixDialogWidth-label"
+              id="matrix-addVirtualMatrixDialogWidth-select"
               value={matrixWidth.toString()}
               label="Width"
               onChange={handleMatrixWidthChange}>
@@ -49,7 +47,7 @@ function VirtualMatrixConfigurator(callback: any) {
             </Select>
           </FormControl>
         </Box>
-        <Box sx={{ maxWidth: width }}>
+        <Box sx={{ maxWidth: addVirtualMatrixDialogWidth }}>
           <FormControl fullWidth>
             <InputLabel id="height-label" sx={{ color: 'text.primary' }}>Height</InputLabel>
             <Select
@@ -62,7 +60,8 @@ function VirtualMatrixConfigurator(callback: any) {
             </Select>
           </FormControl>
         </Box>
-        <Button sx={{ width: width, color: 'text.primary', backgroundColor: 'secondary.main' }} onClick={returnValue}>
+        <br/>
+        <Button sx={{ width: addVirtualMatrixDialogWidth - defaultPaddingSize * 5, color: 'text.primary', backgroundColor: 'secondary.main' }} onClick={returnValue}>
           Add
         </Button>
       </Box>
@@ -70,4 +69,4 @@ function VirtualMatrixConfigurator(callback: any) {
   </>
 };
 
-export default VirtualMatrixConfigurator;
+export default MatrixConfigurator;

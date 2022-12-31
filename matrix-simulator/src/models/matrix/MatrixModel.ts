@@ -1,4 +1,4 @@
-import { MatrixConfiguration } from "../../components/MatrixConfiguration";
+import { VirtualMatrixConfiguration } from "../../components/configuration/VirtualMatrixConfiguration";
 import { VirtualCanvas } from "../VirtualCanvas";
 
 export class MatrixModel {
@@ -9,7 +9,7 @@ export class MatrixModel {
     private set canvas(value: VirtualCanvas) {
         this._canvas = value;
     }
-    constructor(configuration: MatrixConfiguration){
-        this._canvas = new VirtualCanvas(configuration.width, configuration.height);
+    constructor(configuration: VirtualMatrixConfiguration){
+        this._canvas = new VirtualCanvas(configuration.widthPixels, configuration.heightPixels);
     }
 }
