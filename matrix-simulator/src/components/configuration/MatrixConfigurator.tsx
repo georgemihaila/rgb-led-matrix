@@ -1,72 +1,49 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
-import { Button, Typography } from '@mui/material';
-import { VirtualMatrixConfiguration } from './VirtualMatrixConfiguration';
-import { ReactNode } from 'react';
-import { addVirtualMatrixDialogWidth, defaultPaddingSize } from '../../infra/constants';
-import { ConfigurationCallbackModel } from './ConfigurationCallbackModel';
+import { TabContext, TabList, TabPanel } from "@mui/lab";
+import { ConfigurationCallbackModel } from "./ConfigurationCallbackModel";
+import { Box, Button, Card, CardActions, CardContent, Tab, Tabs, Typography } from "@mui/material";
+import { useState } from "react";
+import { addVirtualMatrixDialogWidth } from "../../infra/constants";
+import { VirtualMatrixConfigurator } from "./VirtualMatrixConfigurator";
+import { PhysicalMatrixConfigurator } from "./PhysicalMatrixConfigurator";
 
-function MatrixConfigurator(callbackModel: ConfigurationCallbackModel) {
-  const [matrixWidth, setMatrixWidth] = React.useState(64);
-  const handleMatrixWidthChange = (event: SelectChangeEvent, child: ReactNode) => {
-    setMatrixWidth(Number.parseInt(event.target.value));
-  };
-
-  const [matrixHeight, setMatrixHeight] = React.useState(64);
-  const handleMatrixHeightChange = (event: SelectChangeEvent, child: ReactNode) => {
-    setMatrixHeight(Number.parseInt(event.target.value));
-  };
-
-  const [virtualMatrix, setVirtualMatrix] = React.useState(new VirtualMatrixConfiguration(128, 128));
-
-  const returnValue = () => {
-    let value = new VirtualMatrixConfiguration(matrixWidth, matrixHeight);
-    setVirtualMatrix(() => value);
-    callbackModel.virtualMatrixConfiguredCallback(value);
-  };
-  const allowedValues = [16, 32, 64, 128, 256];
-
-  return <>
-    <Typography component="div" variant="body1">
-      <Box sx={{ maxWidth: addVirtualMatrixDialogWidth, color: 'text.primary', padding: '5px' }}>
-        <br />
-        <Box sx={{ maxWidth: addVirtualMatrixDialogWidth }}>
-          <FormControl fullWidth>
-            <InputLabel id="addVirtualMatrixDialogWidth-label" sx={{ color: 'text.primary' }}>Width</InputLabel>
-            <Select
-              labelId="addVirtualMatrixDialogWidth-label"
-              id="matrix-addVirtualMatrixDialogWidth-select"
-              value={matrixWidth.toString()}
-              label="Width"
-              onChange={handleMatrixWidthChange}>
-              {allowedValues.map((x, i) => <MenuItem value={x} key={i}>{x}px</MenuItem>)}
-            </Select>
-          </FormControl>
-        </Box>
-        <Box sx={{ maxWidth: addVirtualMatrixDialogWidth }}>
-          <FormControl fullWidth>
-            <InputLabel id="height-label" sx={{ color: 'text.primary' }}>Height</InputLabel>
-            <Select
-              labelId="height-label"
-              id="matrix-height-select"
-              value={matrixHeight.toString()}
-              label="Height"
-              onChange={handleMatrixHeightChange}>
-              {allowedValues.map((x, i) => <MenuItem value={x} key={i}>{x}px</MenuItem>)}
-            </Select>
-          </FormControl>
-        </Box>
-        <br/>
-        <Button sx={{ width: addVirtualMatrixDialogWidth - defaultPaddingSize * 5, color: 'text.primary', backgroundColor: 'secondary.main' }} onClick={returnValue}>
-          Add
-        </Button>
-      </Box>
-    </Typography>
-  </>
-};
-
-export default MatrixConfigurator;
+export function MatrixConfigurator() {
+    const [value, setValue] = useState('1');
+    const handleChange = (event: React.SyntheticEvent, newValue: string) => {
+        setValue(newValue);
+    };
+    const bull = (
+        <Box
+            component="span"
+            sx={{ display: 'inline-block', mx: '2px', transform: 'scale(0.8)' }}
+        >
+        </Box>);
+    return <>
+        <Card sx={{ maxWidth: addVirtualMatrixDialogWidth, backgroundColor: '#7e57c2' }}>
+            <CardContent>
+                <Typography variant="h5" component="div" style={{ cursor: 'hand', userSelect: 'none' }}>
+                    Add matrix
+                </Typography>
+            </CardContent>
+            <Box sx={{ backgroundColor: '#d0d4ed', color: '#f06292', maxWidth: addVirtualMatrixDialogWidth }}>
+                <TabContext value={value}>
+                    <Box sx={{ backgroundColor: '#a6d4fa', borderBottom: 1, borderColor: 'divider' }}>
+                        <TabList onChange={handleChange}>
+                            <Tab label="Virtual" value="1" />
+                            <Tab label="Physical" value="2" />
+                            <Tab label="RMQ" value="3" />
+                        </TabList>
+                    </Box>
+                    <TabPanel value="1">
+                        <VirtualMatrixConfigurator />
+                    </TabPanel>
+                    <TabPanel value="2">
+                        <PhysicalMatrixConfigurator />
+                    </TabPanel>
+                    <TabPanel value="3">
+                        RMQ connection
+                    </TabPanel>
+                </TabContext>
+            </Box>
+        </Card>
+    </>
+}
